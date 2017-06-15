@@ -1,0 +1,11 @@
+.icon {
+	&__svg {
+		display: inline-block;
+		vertical-align: middle;
+		width: auto;
+		height: 100%;
+	}
+	&__path {
+		fill: currentcolor;
+	}
+}

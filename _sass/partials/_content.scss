@@ -1,0 +1,6 @@
+.content {
+	padding: $spacing-unit * 2 0;
+	@include media-query($on-phone) {
+		padding: $spacing-unit 0;
+	}
+}

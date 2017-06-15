@@ -1,0 +1,22 @@
+$base-font-family: 'freight-text-pro', serif;
+$code-font-family: 'inconsolata', monospace;
+$base-font-size:   2.2rem;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.675;
+$base-line-height: 1.5;
+
+$spacing-unit:     3.2rem;
+
+$white:            #fff;
+$brown:            #776969;
+$brown-dark:       #373131;
+$brown-light:      desaturate(#B6A2A2, 10%);
+$brown-lighter:    lighten(desaturate($brown-light, 10%), 15%);
+$brown-lightest:   lighten($brown-lighter, 10%);
+
+$text-color:       $brown;
+$background-color: $white;
+$brand-color:      $brown-dark;
+
+$content-width:    96rem;
+$on-phone:         767px;

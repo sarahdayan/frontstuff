@@ -1,0 +1,50 @@
+.header {
+	padding: $spacing-unit 0;
+	border-bottom: .1rem solid $brown-lightest;
+	&__inner {
+		display: flex;
+		align-items: flex-end;
+		@include media-query($on-phone) {
+			align-items: initial;
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+	&__col {
+		flex-grow: 1;
+	}
+	&__title {
+		font-size: $base-font-size * 1.875;
+		font-weight: 600;
+		font-style: italic;
+	}
+	&__description {
+		color: $brown-light;
+		@include media-query($on-phone) {
+			margin-bottom: $spacing-unit / 2;
+		}
+	}
+	&__links {
+		display: flex;
+		justify-content: right;
+		@include media-query($on-phone) {
+			justify-content: center;
+		}
+	}
+	&__item {
+		margin-left: $spacing-unit / 2;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+	&__link {
+		display: inline-block;
+		width: $base-font-size * 1.3;
+		height: $base-font-size * 1.3;
+		color: $brown-lighter;
+		transition: color .1s ease-out;
+		&:hover {
+			color: $brown-light;
+		}
+	}
+}

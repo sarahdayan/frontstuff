@@ -1,0 +1,8 @@
+.posts {
+	&__post {
+		margin-bottom: $spacing-unit;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

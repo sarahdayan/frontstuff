@@ -1,0 +1,25 @@
+* {
+	outline: none;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+	color: $text-color;
+	background-color: $background-color;
+	font-kerning: normal;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+a {
+	color: $brand-color;
+	text-decoration: none;
+}
