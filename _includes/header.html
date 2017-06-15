@@ -1,17 +1,27 @@
-<header class="header text-center" role="banner">
+<header class="header" role="banner">
 	<div class="container">
-		{% if page.layout == 'home' %}
-		{% assign header_title_tag = 'h1' %}
-		{% else %}
-		{% assign header_title_tag = 'p' %}
-		{% endif %}
-		<{{ header_title_tag }} class="header__title">
-			<a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-		</{{ header_title_tag }}>
-		<p class="header__description">{{ site.short_description | escape }}</p>
-		<ul class="header__links">
-			<li><a class="header__link" href="https://github.com/{{ site.github_username }}">GitHub</a></li>
-			<li><a class="header__link" href="{{ "/feed.xml" | relative_url }}">RSS</a></li>
-		</ul>
+		<div class="header__inner">
+			{% if page.layout == 'home' %}
+			{% assign header_title_tag = 'h1' %}
+			{% else %}
+			{% assign header_title_tag = 'p' %}
+			{% endif %}
+			<div class="header__col">
+				<{{ header_title_tag }} class="header__title">
+					<a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+				</{{ header_title_tag }}>
+				<p class="header__description">{{ site.short_description | escape }}</p>
+			</div>
+			<div class="header__col">
+				<ul class="header__links">
+					<li class="header__item">
+						{% include icon-github.html username="sarahdayan" class="header__link" %}
+					</li>
+					<li class="header__item">
+						{% include icon-rss.html class="header__link" %}
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </header>
