@@ -22,45 +22,7 @@
 			margin-bottom: $spacing-unit / 2;
 		}
 
-		/* Compiled Markdown (non-BEM) */
-
-		iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-		ol, ul, table, figure, audio, video {
-			margin-bottom: $spacing-unit / 2;
-		}
-
-		a {
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-
-		@import 'partials/syntax-highlighting';
-
-		> code, p code {
-			padding: $spacing-unit / 8 $spacing-unit / 4;
-			border-radius: .6rem;
-			background: $brown-lightest;
-			font-family: $code-font-family;
-			overflow-x: scroll;
-			@extend .nl;
-		}
-
-		> .highlight pre {
-			padding: $spacing-unit;
-			border-radius: .6rem;
-			background: $brown-lightest;
-			font-family: $code-font-family;
-			overflow-x: scroll;
-		}
-
-		/* Removes the extra-space at the end of the container */
-
-		> *:last-child,
-		> *:last-child > *:last-child,
-		> *:last-child > *:last-child > *:last-child {
-			margin-bottom: 0;
-		}
+		@import 'partials/post-content';
 
 	}
 	&__more {

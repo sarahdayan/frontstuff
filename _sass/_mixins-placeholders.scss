@@ -4,6 +4,19 @@
 	}
 }
 
+%script {
+	border-radius: .6rem;
+	background: $brown-lightest;
+	font-family: $code-font-family;
+	overflow-x: scroll;
+}
+
+%code {
+	padding: $spacing-unit / 8 $spacing-unit / 4;
+	@extend %script;
+	@extend .nl;
+}
+
 %clearfix:after {
 	content: '';
 	display: table;

@@ -1,0 +1,63 @@
+/* Compiled Markdown (non-BEM) */
+
+iframe, h2, h3, h4, h5, h6, p, blockquote, pre,
+ol, ul, table, figure, audio, video {
+	margin-bottom: $spacing-unit / 2;
+}
+
+h2, h3, h4, h5, h6 {
+	@extend .post__title;
+}
+
+h3 {
+	font-size: $base-font-size * 1.15;
+}
+
+h4 {
+	font-size: $base-font-size * 1.1;
+}
+
+ul, ol {
+	padding-left: $spacing-unit;
+}
+
+ul {
+	list-style: initial;
+}
+
+ol {
+	list-style: reset;
+}
+
+a {
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+> code {
+	@extend %code;
+}
+
+> p,
+> ul,
+> ol {
+	code {
+		@extend %code;
+	}
+}
+
+> .highlight {
+	pre {
+		padding: $spacing-unit;
+		@extend %script;
+	}
+}
+
+/* Removes the extra-space at the end of the container */
+
+> *:last-child,
+> *:last-child > *:last-child,
+> *:last-child > *:last-child > *:last-child {
+	margin-bottom: 0;
+}
