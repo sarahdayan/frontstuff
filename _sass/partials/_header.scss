@@ -25,7 +25,7 @@
 	}
 	&__links {
 		display: flex;
-		justify-content: right;
+		justify-content: flex-end;
 		@include media-query($on-phone) {
 			justify-content: center;
 		}
