@@ -8,8 +8,9 @@ $base-line-height: 1.5;
 $spacing-unit:     3.2rem;
 
 $white:            #fff;
-$brown:            #776969;
 $brown-dark:       #373131;
+$brown-mid:        lighten($brown-dark, 10%);
+$brown:            #776969;
 $brown-light:      desaturate(#B6A2A2, 10%);
 $brown-lighter:    lighten(desaturate($brown-light, 10%), 15%);
 $brown-lightest:   lighten($brown-lighter, 10%);

@@ -7,6 +7,7 @@ ol, ul, table, figure, audio, video {
 
 h2, h3, h4, h5, h6 {
 	@extend .post__title;
+	color: $brown-mid;
 }
 
 h2 {
@@ -14,11 +15,11 @@ h2 {
 }
 
 h3 {
-	font-size: $base-font-size * 1.15;
+	font-size: $base-font-size * 1.1;
 }
 
-h4 {
-	font-size: $base-font-size * 1.1;
+h4, h5, h6 {
+	font-size: $base-font-size;
 }
 
 ul, ol {
@@ -43,11 +44,26 @@ a {
 	@extend %code;
 }
 
+> h2,
+> h3,
+> h4,
+> h5,
+> h6,
 > p,
 > ul,
 > ol {
 	code {
 		@extend %code;
+	}
+}
+
+> h2,
+> h3,
+> h4,
+> h5,
+> h6 {
+	code {
+		font-size: 80%;
 	}
 }
 
