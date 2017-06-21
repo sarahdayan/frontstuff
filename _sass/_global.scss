@@ -1,5 +1,4 @@
 * {
-	outline: none;
 	box-sizing: border-box;
 }
 
@@ -30,6 +29,7 @@ em {
 a {
 	color: $brand-color;
 	text-decoration: none;
+	outline: none;
 }
 
 abbr {
