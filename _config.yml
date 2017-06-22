@@ -21,7 +21,7 @@ description: > # this means to ignore newlines until "baseurl:"
 short_description: Front-end web developer with a taste for design and typography.
 author: Sarah Dayan
 baseurl: "" # the subpath of your site, e.g. /blog
-permalink: /:year/:month/:title
+permalink: /:title
 url: "http://frontstuff.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: sarahdayan
 
