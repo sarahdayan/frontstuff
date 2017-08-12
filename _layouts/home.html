@@ -9,7 +9,7 @@ layout: default
 			<h2 class="post__title">
 				<a class="post__link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
 			</h2>
-			<p class="post__content post__content--summary">{{ post.content | strip_html | truncatewords: 50 }}</p>
+			<p class="post__content post__content--summary">{{ post.content | strip_html | truncatewords: 30 }}</p>
 			<a class="post__more" href="{{ post.url | relative_url }}">Read more</a>
 		</li>
 	{% else %}
