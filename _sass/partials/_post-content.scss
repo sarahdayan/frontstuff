@@ -67,10 +67,16 @@ a {
 	}
 }
 
-> .highlight {
-	pre {
-		padding: $spacing-unit;
-		@extend %script;
+img {
+	padding: $spacing-unit / 3;
+	border: .1rem solid $brown-lightest;
+}
+
+.highlight {
+	padding: $spacing-unit;
+	@extend %script;
+	* {
+		margin: 0;
 	}
 }
 
