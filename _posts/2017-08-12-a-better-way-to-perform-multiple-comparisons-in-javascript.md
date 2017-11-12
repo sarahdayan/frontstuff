@@ -2,6 +2,7 @@
 layout: post
 title:  "A Better Way to Perform Multiple Comparisons in Javascript"
 date:   2017-08-12 15:16:00 +0200
+comments: true
 ---
 
 Having to compare a value with a bunch of other values is a common, even trivial task for a developer. It's something you probably don't even think about when you have to do it.

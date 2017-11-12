@@ -2,6 +2,7 @@
 layout: post
 title:  "You Need to Stop Targeting Tags in CSS"
 date:   2017-06-23 00:01:00 +0200
+comments: true
 ---
 
 CSS seems easy to most developers. Because of its apparent simplicity, and because it's so flexible, you can easily bend it to your needs and make it work. Problem is, it often makes up for a lack of knowledge of how the language works and it doesn't push you to try and write better code.

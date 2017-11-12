@@ -2,6 +2,7 @@
 layout: post
 title:  "Build a Simple Validator Service in Javascript"
 date:   2017-08-27 00:20:00 +0200
+comments: true
 ---
 
 **Data validation is a pain**. Not only is it hard to do it right, but it can also be difficult to implement without making a mess. When trying to validate data before saving it, it's easy to pollute methods and violate many programming best practices.

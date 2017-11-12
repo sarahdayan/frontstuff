@@ -1,21 +1,42 @@
 ---
 layout: default
 ---
-
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-	<header class="post__header">
-		<p class="post__meta">
-			<time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-				{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-				{{ page.date | date: date_format }}
-			</time>
-			{% if page.author %}
-				| <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-			{% endif %}
-		</p>
-		<h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
-	</header>
-	<div class="post__content" itemprop="articleBody">
-		{{ content }}
+<div class="container">
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<header class="post__header">
+			<p class="post__meta">
+				<time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+					{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+					{{ page.date | date: date_format }}
+				</time>
+				{% if page.author %}
+					| <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+				{% endif %}
+			</p>
+			<h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
+		</header>
+		<div class="post__content" itemprop="articleBody">
+			{{ content }}
+		</div>
+	</article>
+</div>
+<div class="comments">
+	<div class="container">
+		{% if page.comments %}
+			<div id="disqus_thread"></div>
+			<script>
+				var disqus_config = function () {
+					this.page.url = '{{ page.url | absolute_url }}';
+					this.page.identifier = '{{ page.url | absolute_url }}';
+				};
+				(function() {
+					var d = document, s = d.createElement('script');
+					s.src = 'https://frontstuff.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', + new Date());
+					(d.head || d.body).appendChild(s);
+				})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		{% endif %}
 	</div>
-</article>
+</div>
