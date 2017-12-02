@@ -1,5 +1,5 @@
 .header {
-	padding: $spacing-unit 0;
+	padding: $spacing-unit / 2 0 $spacing-unit;
 	border-bottom: .1rem solid $brown-lightest;
 	&__inner {
 		display: flex;
