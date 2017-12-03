@@ -256,29 +256,13 @@ In a real-world project, chances are you'll want to use various map structures. 
 
 We want a generic mixin to generate all modifiers, and that's able to handle multidimensional maps. If you compare the two mixins we came up with in this tutorial, you'll notice they look a lot alike. The only difference is that one performs an extra loop before printing the computed CSS declaration. This is a typical job for a **recursive mixin**.
 
-The first thing we need is a function to detect the depth of a map. Sass doesn't have a native function for that, but [Hugo Giraudel][hugo-giraudel] wrote a fantastic custom one called `map-depth`:
-
-{% highlight scss %}
-@function map-depth($map) {
-  $level: 1;
-
-  @each $key, $value in $map {
-    @if type-of($value) == "map" {
-      $level: max(map-depth($value) + 1, $level);
-    }
-  }
-
-  @return $level;
-}
-{% endhighlight %}
-
-We can now write our recursive mixin. It will begin with an `@each` directive where we can start building our selector. This is where we'll check if the current `$key` equals to "base" so we can decide to output it or not. Then, we'll check the depth of the map: if it returns more than 1, we need to run the mixin again from where we are and pass it the nested map. Otherwise, we can print the CSS declaration.
+It will begin with an `@each` directive where we can start building our selector. This is where we'll check if the current `$key` equals to "base" so we can decide to output it or not. Then, we'll check if the current `$value` is a map itself: if yes, we need to run the mixin again from where we are and pass it the nested map. Otherwise, we can print the CSS declaration.
 
 {% highlight scss %}
 @mixin modifiers($map, $attribute, $prefix: '-', $separator: '-', $base: 'base') {
   @each $key, $value in $map {
     &#{if($key != $base, #{$prefix}#{$key}, '')} {
-      @if map-depth($map) > 1 {
+      @if type-of($value) == 'map' {
         @include modifiers($value, $attribute, $separator);
       }
       @else {
@@ -295,6 +279,5 @@ And *voilà*! This mixin will work with maps of any depth. Feel free to use it i
 [sass:lists]: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#Lists
 [wiki:associative-array]: https://en.wikipedia.org/wiki/Associative_array
 [sass:3.3]: http://sass-lang.com/documentation/file.SASS_CHANGELOG.html#SassScript_Maps
-[hugo-giraudel]: https://hugogiraudel.com/
 [github:sass-modifiers-mixin]: https://gist.github.com/sarahdayan/4d2cc04a636e8039f10a889a0e29fbd9
 [sassmeister:sass-modifiers-mixin]: https://www.sassmeister.com/gist/4d2cc04a636e8039f10a889a0e29fbd9
