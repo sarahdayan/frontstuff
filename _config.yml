@@ -24,6 +24,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 permalink: /:title
 url: "http://frontstuff.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: sarahdayan
+twitter_username: frontstuff_io
 
 # Build settings
 assets:
