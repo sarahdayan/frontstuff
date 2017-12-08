@@ -1,0 +1,12 @@
+.author {
+	margin-top: $spacing-unit * 2;
+	padding-top: $spacing-unit * 2;
+	border-top: .1rem solid $brown-lightest;
+	font-size: $base-font-size * 0.825;
+	&__name {
+		margin-bottom: $spacing-unit / 5;
+		font-size: $base-font-size;
+		font-weight: 600;
+		color: $brown-dark;
+	}
+}

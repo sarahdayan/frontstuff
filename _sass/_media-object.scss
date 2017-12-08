@@ -1,0 +1,8 @@
+.media-object {
+	display: flex;
+	align-items: center;
+	&__media {
+		width: 10rem;
+		margin-right: $spacing-unit;
+	}
+}

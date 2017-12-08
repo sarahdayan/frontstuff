@@ -10,12 +10,15 @@
 @import 'global';
 @import 'container';
 @import 'embed';
+@import 'img';
 @import 'icon';
+@import 'media-object';
 @import 'syntax-highlighting';
 
 @import 'partials/header';
 @import 'partials/content';
 @import 'partials/posts';
 @import 'partials/post';
+@import 'partials/author';
 @import 'partials/comments';
 @import 'partials/footer';
