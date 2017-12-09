@@ -1,8 +1,17 @@
 .media-object {
+	$block: &;
 	display: flex;
 	align-items: center;
 	&__media {
 		width: 10rem;
 		margin-right: $spacing-unit;
+	}
+	@include media-query($on-phone) {
+		flex-direction: column;
+		text-align: center;
+		#{$block}__media {
+			margin-right: 0;
+			margin-bottom: $spacing-unit;
+		}
 	}
 }
