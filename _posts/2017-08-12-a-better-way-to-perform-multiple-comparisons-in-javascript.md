@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "A Better Way to Perform Multiple Comparisons in Javascript"
+title:  "A Better Way to Perform Multiple Comparisons in JavaScript"
 date:   2017-08-12 15:16:00 +0200
 comments: true
 ---
 
 Having to compare a value with a bunch of other values is a common, even trivial task for a developer. It's something you probably don't even think about when you have to do it.
 
-Look at the following Javascript example:
+Look at the following JavaScript example:
 
 {% highlight js %}
 var name = 'Kurt';
@@ -24,7 +24,7 @@ There are several problems in the above condition:
 - It's **long**. If you have line length-based coding standards in your project (such as the no more than 80 characters per line rule), you won't be able to add more conditions to your `if` statement without either breaking it into several lines (messy and hard to read) or shortening your variable names (a terrible short-term solution, and you may not even have a choice).
 - It's **hard to read**. This might be *okay* with 3 statements like we have up here but the more you add, the more illegible it will get.
 
-## Native Javascript alternative
+## Native JavaScript alternative
 
 When given a problem, it's always a good idea to look at it from different perspectives. What if, instead of comparing a value to every possibility one by one, we simply tried to check if it exists in a **list**?
 
@@ -35,7 +35,7 @@ if (names.indexOf('Kurt') !== -1) {
 }
 {% endhighlight %}
 
-Instead of repeating our search value/variable, we're using Javascript's native `Array.prototype.indexOf()` method to see if it exists in an array of values. `indexOf()` returns the value's position, so we only have to make sure the result is different from `-1` (which is what `indexOf()` returns if the value isn't found).
+Instead of repeating our search value/variable, we're using JavaScript's native `Array.prototype.indexOf()` method to see if it exists in an array of values. `indexOf()` returns the value's position, so we only have to make sure the result is different from `-1` (which is what `indexOf()` returns if the value isn't found).
 
 This method is a lot clearer, more elegant, legible and DRY. It's also a lot more **convenient**. In real-life projects you usually get lists of values from API calls or database requests, which come as an array or can easily be turned into one. It's much smarter for you to use this method than loop over every value and match it against your string.
 
@@ -64,7 +64,7 @@ Here, we keep our list separate in a variable (either hard-coded or from a datab
 
 And what if you don't have an array but a string instead? Easy.
 
-- Either use Javascript's native `String.prototype.indexOf()` method...
+- Either use JavaScript's native `String.prototype.indexOf()` method...
 - ... or if you have a consistent separator in your string, break it up into an array with `String.prototype.split()` then refer to the tutorial above.
 
 {% highlight js %}

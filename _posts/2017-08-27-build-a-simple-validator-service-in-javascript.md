@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Build a Simple Validator Service in Javascript"
+title:  "Build a Simple Validator Service in JavaScript"
 date:   2017-08-27 00:20:00 +0200
 comments: true
 ---
@@ -123,14 +123,14 @@ Don't freak out, I'll explain 😁 What we want is for our value to be checked a
 
 Our method takes two arguments: a value to test, and a set of rules as an array. Each rule must be the exact name of the validator's method that needs to be called, as a `string`.
 
-We're using the native Javascript method `Array.prototype.every()`. As explained on [MDN][mdn:every], it *"tests whether all elements in the array pass the test implemented by the provided function"*. We use it to call every rule one after the other, and we pass it the value we want to test. Since `every()` needs **every** (duh!) test to return `true` to itself return `true`, we can simply return it.
+We're using the native JavaScript method `Array.prototype.every()`. As explained on [MDN][mdn:every], it *"tests whether all elements in the array pass the test implemented by the provided function"*. We use it to call every rule one after the other, and we pass it the value we want to test. Since `every()` needs **every** (duh!) test to return `true` to itself return `true`, we can simply return it.
 
 ### And what about this `self[rule](value)` weirdness?
 
 This line is what's going to call the appropriate validator method for each rule. Let's break this down:
 
 - We defined the `self` variable two lines prior, and it refers to `this` in the context of the `Validator` object. As explained by Douglas Crockford in chapter 4 of [JavaScript: The Good Parts][books:javascript-the-good-parts], *"When a function is not the property of an object, then it is invoked as a function [...] When a function is invoked with this pattern, this is bound to the global object. This was a mistake in the design of the language."* When `Validator.prototype.validate()` is invoked, `this` refers to `Validator` **but** the scope changes within the callback function of `every()`. Because it's using the function invocation pattern, using `this` would refer to `window` instead of `Validator`. To circumvent that, we stored the value of `this` in a variable while we still were in the desired context. Now we can use the variable within the callback and it will refer to the `Validator` object.
-- `rule` is the current element being iterated on by `every()`. It successively refers to each rule in the array. Javascript treats functions as objects, so we can access function members the exact same way: using either the dot or bracket notation. Here we use the current `rule` as the key, within brackets, to call the right method.
+- `rule` is the current element being iterated on by `every()`. It successively refers to each rule in the array. JavaScript treats functions as objects, so we can access function members the exact same way: using either the dot or bracket notation. Here we use the current `rule` as the key, within brackets, to call the right method.
 - `value` is the argument being tested. It's wrapped in parentheses because the member we're accessing is a function. We're using an invocation operator to invoke it and we pass `value` as an argument.
 
 At each loop, we iterate over a new rule from the `rules` array and we use it to call the name-matching function. So with the `['isString', 'isNotEmpty']` array, the loop is calling `Validator.prototype.isString()` then `Validator.prototype.isNotEmpty()`, and passing them the `value`.
