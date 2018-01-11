@@ -1,23 +1,23 @@
 $base-font-family: 'freight-text-pro', serif;
 $code-font-family: 'inconsolata', monospace;
-$base-font-size:   2.2rem;
+$base-font-size: 2.2rem;
 $base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.675;
+$small-font-size: $base-font-size * 0.675;
 $base-line-height: 1.5;
 
-$spacing-unit:     3.2rem;
+$spacing-unit: 3.2rem;
 
-$white:            #fff;
-$brown-dark:       #373131;
-$brown-mid:        lighten($brown-dark, 10%);
-$brown:            #776969;
-$brown-light:      desaturate(#B6A2A2, 10%);
-$brown-lighter:    lighten(desaturate($brown-light, 10%), 15%);
-$brown-lightest:   lighten($brown-lighter, 10%);
+$white: #fff;
+$brown-dark: #373131;
+$brown-mid: lighten($brown-dark, 10%);
+$brown: #776969;
+$brown-light: desaturate(#b6a2a2, 10%);
+$brown-lighter: lighten(desaturate($brown-light, 10%), 15%);
+$brown-lightest: lighten($brown-lighter, 10%);
 
-$text-color:       $brown;
+$text-color: $brown;
 $background-color: $white;
-$brand-color:      $brown-dark;
+$brand-color: $brown-dark;
 
-$content-width:    96rem;
-$on-phone:         767px;
+$content-width: 66rem;
+$on-phone: 550px;

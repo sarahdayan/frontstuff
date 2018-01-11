@@ -10,15 +10,15 @@
 				<{{ header_title_tag }} class="header__title">
 					<a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
 				</{{ header_title_tag }}>
-				<p class="header__description">{{ site.short_description | escape }}</p>
+				<p class="header__description">{{ site.short_description | replace_first: 'developer', 'developer<br>' }}</p>
 			</div>
 			<div class="header__col">
 				<ul class="header__links">
 					<li class="header__item">
-						{% include icon-github.html username="sarahdayan" class="header__link" %}
+						{% include icon-github.html username=site.github_username class="header__link" %}
 					</li>
 					<li class="header__item">
-						{% include icon-twitter.html username="frontstuff_io" class="header__link" %}
+						{% include icon-twitter.html username=site.twitter_username class="header__link" %}
 					</li>
 					<li class="header__item">
 						{% include icon-rss.html class="header__link" %}

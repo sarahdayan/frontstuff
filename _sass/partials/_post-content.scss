@@ -1,11 +1,28 @@
 /* Compiled Markdown (non-BEM) */
 
-iframe, h2, h3, h4, h5, h6, p, blockquote, pre,
-ol, ul, table, figure, audio, video {
+iframe,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ol,
+ul,
+table,
+figure,
+audio,
+video {
 	margin-bottom: $spacing-unit;
 }
 
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
 	@extend .post__title;
 	color: $brown-mid;
 }
@@ -18,11 +35,14 @@ h3 {
 	font-size: $base-font-size * 1.1;
 }
 
-h4, h5, h6 {
+h4,
+h5,
+h6 {
 	font-size: $base-font-size;
 }
 
-ul, ol {
+ul,
+ol {
 	padding-left: $spacing-unit;
 }
 
@@ -69,7 +89,7 @@ a {
 
 img {
 	padding: $spacing-unit / 3;
-	border: .1rem solid $brown-lightest;
+	border: 0.1rem solid $brown-lightest;
 }
 
 .highlight {
@@ -78,6 +98,12 @@ img {
 	* {
 		margin: 0;
 	}
+}
+
+.caption {
+	margin-top: -#{$spacing-unit / 2};
+	color: $brown-light;
+	font-size: 80%;
 }
 
 /* Removes the extra-space at the end of the container */
