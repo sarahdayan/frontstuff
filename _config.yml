@@ -17,7 +17,7 @@ title: frontstuff
 email: yo@frontstuff.io
 description: > # this means to ignore newlines until "baseurl:"
   Front-end web developer with a taste for design and typography.
-  Insights on HTML, CSS and Javascript; UI, UX and any other front stuff.
+  Insights on HTML, CSS and Javascript, UI/UX and any other front stuff.
 short_description: Front-end web developer with a taste for design and typography.
 author: Sarah Dayan
 baseurl: "" # the subpath of your site, e.g. /blog
