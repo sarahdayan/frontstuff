@@ -7,7 +7,7 @@ comments: true
 
 ***"Favor composition over inheritance"***. This piece of wisdom from [*Design Patterns*][wiki:design-patterns], one of the most influential software engineering books, is the foundation of **utility-first CSS**. It also shares many principles with **functional programming**: immutability, composability, predictability, and avoidance of side-effects. The goal behind all those fancy terms is to write code that's **easier to maintain and to scale**.
 
-Many developers enjoy functional programming, yet utility-first CSS still hasn't convinced everyone. While some [praise it][jon-gold:functional-css], others have been [vividly critical][zeldman:kiss-my-classname] about such a practice. **I used to be in the latter group**. I was a BEM fan, sold to an approach I adopted for its advantages and ended up rooting for like we do for a sports team. I rejected utility-first because it was implying my beloved and familiar approach wasn't good anymore.
+Despite its growing popularity, utility-first CSS still hasn't convinced everyone. While some [praise it][jon-gold:functional-css], others have been [vividly critical][zeldman:kiss-my-classname] about such a practice. **I used to be in the latter group**. I was a BEM fan, sold to an approach I adopted for its advantages and ended up rooting for like we do for a sports team. I rejected utility-first because it was implying my beloved and familiar approach wasn't good anymore.
 
 Since then, I've dived *a lot* deeper into the topic. I studied design patterns and functional programming, and this allowed me to **radically revise my judgment**.
 
