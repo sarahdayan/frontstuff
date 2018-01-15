@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "In Defense of Utility-First CSS"
-date: 2018-01-15 01:30:00 +0200
+date: 2018-01-15 23:11:00 +0200
 comments: true
 ---
 
