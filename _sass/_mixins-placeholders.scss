@@ -5,7 +5,7 @@
 }
 
 %script {
-	border-radius: .6rem;
+	border-radius: 0.6rem;
 	background: $brown-lightest;
 	font-family: $code-font-family;
 	font-size: 90%;
@@ -14,6 +14,7 @@
 
 %code {
 	padding: $spacing-unit / 8 $spacing-unit / 4;
+	white-space: nowrap;
 	@extend %script;
 	@extend .nl;
 }

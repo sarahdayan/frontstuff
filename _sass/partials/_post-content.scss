@@ -83,7 +83,7 @@ a {
 > h5,
 > h6 {
 	code {
-		font-size: 80%;
+		font-size: $small-font-size;
 	}
 }
 
@@ -103,7 +103,7 @@ img {
 .caption {
 	margin-top: -#{$spacing-unit / 2};
 	color: $brown-light;
-	font-size: 80%;
+	font-size: $small-font-size;
 }
 
 /* Removes the extra-space at the end of the container */
