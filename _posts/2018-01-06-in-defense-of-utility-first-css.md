@@ -363,6 +363,7 @@ Specificity is a powerful tool, but it needs to be used with the uppermost cauti
 .color-navy {
   color: navy;
 }
+
 .color-red {
   color: red;
 }
@@ -515,7 +516,6 @@ This technique only works if you don't have to support Internet Explorer and Edg
 /* Nope */
 <div class="background-light">
   <h2 class="color-lime">Ezekiel 25:17</h2>
-  <p class="color-dark">The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men...</p>
   <p class="color-dark">The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men.</p>
   <p class="color-dark">Blessed is he, who in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children.</p>
   <p class="color-dark">And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy my brothers.</p>
@@ -525,7 +525,6 @@ This technique only works if you don't have to support Internet Explorer and Edg
 /* Yes */
 <div class="background-light color-dark">
   <h2 class="color-lime">Ezekiel 25:17</h2>
-  <p>The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men...</p>
   <p>The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men.</p>
   <p>Blessed is he, who in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children.</p>
   <p>And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy my brothers.</p>
