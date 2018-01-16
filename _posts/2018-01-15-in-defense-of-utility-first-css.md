@@ -179,7 +179,7 @@ BEM is a great attempt at fixing inherent CSS problems, but making it the core C
 
 This statement can be said of any naming system for any specific project, **whatever methodology you pick**. Your CSS class names ecosystem is a layer of abstraction on top of pure CSS. Whether you're using semantic names like `.card` or functional ones like `.bg`, new contributors will need to familiarize themselves with what does what and when to use it.
 
-You can't escape having to use a naming interface between your HTML and CSS, unless you're willing to either describe your exact markup in CSS or write inline styles. Ultimately, functional class names are [easier to understand because](#its-ugly-and-hard-to-read) they describe the style. You know what they do without having to lookup the actual styles, while semantic names force you to either look at the rendering or browse code.
+You can't escape having to use a naming interface between your HTML and CSS, unless you're willing to either describe your exact markup in CSS or write inline styles. Ultimately, functional class names are [easier to understand](#its-ugly-and-hard-to-read) because they describe the style. You know what they do without having to lookup the actual styles, while semantic names force you to either look at the rendering or browse code.
 
 ## "It's unmaintainable"
 
