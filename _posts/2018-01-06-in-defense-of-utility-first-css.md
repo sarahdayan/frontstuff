@@ -25,9 +25,9 @@ All that being said, just because it *looks* the same doesn’t mean it *is* the
 
 {% highlight html %}
 <h2 style="font-size: 16px; font-weight: bold; color: purple">Stranger Things</h2>
-<p class="font-size: 13px; font-style: italic">Stranger Things is an American science fiction-horror web television...</p>
+<p style="font-size: 13px; font-style: italic">Stranger Things is an American science fiction-horror web television...</p>
 <h2 style="font-size: 16px; font-weight: bold; color: purple">Game of Thrones</h2>
-<p class="font-size: 13px; font-style: italic">Game of Thrones is an American fantasy drama television...</p>
+<p style="font-size: 13px; font-style: italic">Game of Thrones is an American fantasy drama television...</p>
 {% endhighlight %}
 Unnecessarily verbose, heavier file size, multiple sources of truth for a single design concept.
 {:.caption}
