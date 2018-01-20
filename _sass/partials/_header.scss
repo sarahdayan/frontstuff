@@ -4,7 +4,7 @@
 	&__inner {
 		display: flex;
 		align-items: flex-end;
-		@include media-query-max($on-phone) {
+		@include media-query($on-phone) {
 			align-items: initial;
 			flex-direction: column;
 			text-align: center;
@@ -17,14 +17,14 @@
 		font-size: $base-font-size * 2.725;
 		font-weight: 600;
 		font-style: italic;
-		@include media-query-max($on-phone) {
+		@include media-query($on-phone) {
 			font-size: $base-font-size * 1.8;
 			margin-bottom: $spacing-unit / 4;
 		}
 	}
 	&__description {
 		color: $brown-light;
-		@include media-query-max($on-phone) {
+		@include media-query($on-phone) {
 			margin-bottom: $spacing-unit / 2;
 		}
 	}
@@ -32,7 +32,7 @@
 		display: flex;
 		justify-content: flex-end;
 		margin-bottom: $spacing-unit / 6;
-		@include media-query-max($on-phone) {
+		@include media-query($on-phone) {
 			justify-content: center;
 			margin-bottom: 0;
 		}

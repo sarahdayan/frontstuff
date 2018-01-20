@@ -6,7 +6,7 @@
 		width: 10rem;
 		margin-right: $spacing-unit;
 	}
-	@include media-query-max($on-phone) {
+	@include media-query($on-phone) {
 		flex-direction: column;
 		text-align: center;
 		#{$block}__media {
