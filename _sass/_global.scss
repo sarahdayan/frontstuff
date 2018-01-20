@@ -31,6 +31,9 @@ a {
 	color: $brand-color;
 	text-decoration: none;
 	outline: none;
+	&:focus {
+		outline: 0.2rem dotted $brown;
+	}
 }
 
 abbr {

@@ -1,0 +1,18 @@
+.skip {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	padding: $spacing-unit / 4 $spacing-unit / 2;
+	background: $brown-mid;
+	font-size: $small-font-size;
+	color: white;
+	border-radius: 0 0 $spacing-unit / 6 0;
+	transform: translateY(-100%);
+	transition: transform 0.1s ease-out;
+	&:focus {
+		transform: translateY(0);
+		text-decoration: underline;
+		outline: none;
+	}
+}
