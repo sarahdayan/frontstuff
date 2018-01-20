@@ -27,13 +27,6 @@ github_username: sarahdayan
 twitter_username: frontstuff_io
 comments: false
 
-pagination:
-  enabled: true
-  per_page: 5
-  permalink: '/page/:num/'
-  sort_reverse: true
-  title: ''
-
 # Build settings
 assets:
   autoprefixer:
