@@ -20,7 +20,6 @@
 
 %code {
 	padding: $spacing-unit / 8 $spacing-unit / 4;
-	white-space: nowrap;
 	@extend %script;
 	@extend .nl;
 }
