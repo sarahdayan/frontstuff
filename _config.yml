@@ -27,12 +27,8 @@ github_username: sarahdayan
 twitter_username: frontstuff_io
 comments: false
 
-pagination:
-  enabled: true
-  per_page: 5
-  permalink: '/page/:num/'
-  sort_reverse: true
-  title: ''
+paginate: 5
+paginate_path: "/page/:num"
 
 # Build settings
 assets:

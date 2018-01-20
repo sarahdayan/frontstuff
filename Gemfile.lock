@@ -117,8 +117,6 @@ GEM
     jekyll-optional-front-matter (0.1.2)
       jekyll (~> 3.0)
     jekyll-paginate (1.1.0)
-    jekyll-paginate-v2 (1.9.2)
-      jekyll (~> 3.0)
     jekyll-readme-index (0.1.0)
       jekyll (~> 3.0)
     jekyll-redirect-from (0.12.1)
@@ -173,14 +171,14 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
     mercenary (0.3.6)
-    mini_portile2 (2.2.0)
+    mini_portile2 (2.3.0)
     minima (2.1.1)
       jekyll (~> 3.3)
     minitest (5.10.2)
     multipart-post (2.0.0)
     net-dns (0.8.0)
-    nokogiri (1.8.0)
-      mini_portile2 (~> 2.2.0)
+    nokogiri (1.8.1)
+      mini_portile2 (~> 2.3.0)
     octokit (4.7.0)
       sawyer (~> 0.8.0, >= 0.5.3)
     pathutil (0.14.0)
@@ -216,7 +214,7 @@ DEPENDENCIES
   github-pages
   jekyll-assets
   jekyll-feed (~> 0.6)
-  jekyll-paginate-v2
+  jekyll-paginate
   minima (~> 2.0)
   tzinfo-data
 
