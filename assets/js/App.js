@@ -22,8 +22,12 @@ var App = (function() {
 		return THEMES.indexOf(theme) !== -1
 	}
 
+	var setCurrentTheme = function(theme) {
+		if (isTheme(theme)) return theme
+	}
+
 	var toggleCurrentTheme = function() {
-		CURRENT_THEME = THEMES.find(function(theme) {
+		return THEMES.find(function(theme) {
 			return theme !== CURRENT_THEME
 		})
 	}
@@ -43,18 +47,28 @@ var App = (function() {
 		}
 	}
 
+	var saveTheme = function(theme) {
+		if (isTheme(theme)) return ls.set('theme', theme)
+	}
+
+	var switchTheme = function(theme) {
+		CURRENT_THEME = theme
+		applyLayout(CURRENT_THEME)
+		saveTheme(CURRENT_THEME)
+	}
+
 	var bind = function() {
 		document
 			.getElementById('theme-toggle')
 			.addEventListener('click', function() {
-				toggleCurrentTheme()
-				applyLayout(CURRENT_THEME)
+				switchTheme(toggleCurrentTheme())
 			})
 	}
 
 	return {
 		init: function() {
 			bind()
+			switchTheme(ls.get('theme'))
 		}
 	}
 })()
