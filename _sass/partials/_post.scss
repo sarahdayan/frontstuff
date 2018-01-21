@@ -1,31 +1,43 @@
 .post {
 	&__meta {
-		display: inline-block;
+		display: block;
 		margin-bottom: $spacing-unit / 2;
-		font-size: $base-font-size * .875;
-		color: $brown-light;
-		letter-spacing: $base-font-size * .08;
+		font-size: $small-font-size;
+		color: lighten($brown, 4%);
+		letter-spacing: $base-font-size * 0.08;
 	}
 	&__title {
+		display: inline-block;
 		margin-bottom: $spacing-unit / 2;
 		font-size: $base-font-size * 1.4;
 		font-weight: 600;
 		color: $brown-dark;
-	}
-	&__link {
+		text-decoration: none;
 		&:hover {
 			text-decoration: underline;
 		}
 	}
+	&__link {
+		display: block;
+		text-decoration: underline;
+		text-decoration-skip: ink;
+		text-decoration-skip-ink: auto;
+	}
 	&__content {
 		&--summary {
+			display: inline-block;
 			margin-bottom: $spacing-unit / 2;
+			color: $text-color;
+			text-decoration: none;
 		}
 
 		@import 'partials/post-content';
-
 	}
 	&__more {
-		text-decoration: underline;
+		display: block;
+		width: 100%;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
 	}
 }
