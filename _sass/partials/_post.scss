@@ -13,8 +13,10 @@
 		font-weight: 600;
 		color: $brown-dark;
 		text-decoration: none;
-		&:hover {
-			text-decoration: underline;
+		&--summary {
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 	&__link {

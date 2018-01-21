@@ -10,7 +10,7 @@ layout: default
 					{{ post.date | date: date_format }}
 				</span>
 				<a class="post__link" href="{{ post.url | relative_url }}">
-					<h2 class="post__title">{{ post.title | escape }}</h2>
+					<h2 class="post__title post__title--summary">{{ post.title | escape }}</h2>
 					<p class="post__content post__content--summary">{{ post.content | strip_html | truncatewords: 30 }}</p>
 					<p class="post__more">
 						<span class="post__more-inner">Read "{{ post.title | escape }}"</span>
