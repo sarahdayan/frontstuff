@@ -1,10 +1,11 @@
 .post {
 	&__meta {
-		display: block;
+		display: inline-block;
 		margin-bottom: $spacing-unit / 2;
 		font-size: $small-font-size;
 		color: var(--secondary-text-color);
 		letter-spacing: $base-font-size * 0.08;
+		text-decoration: none;
 	}
 	&__title {
 		display: inline-block;
@@ -21,6 +22,8 @@
 	}
 	&__link {
 		display: block;
+		margin: -#{$spacing-unit / 2};
+		padding: $spacing-unit / 2;
 		text-decoration: underline;
 		text-decoration-skip: ink;
 		text-decoration-skip-ink: auto;

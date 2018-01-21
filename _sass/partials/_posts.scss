@@ -1,6 +1,6 @@
 .posts {
 	&__post {
-		margin-bottom: $spacing-unit;
+		margin-bottom: $spacing-unit / 2;
 		&:last-child {
 			margin-bottom: 0;
 		}
