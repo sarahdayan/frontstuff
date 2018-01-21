@@ -102,8 +102,9 @@ img {
 
 .caption {
 	margin-top: -#{$spacing-unit / 2};
-	color: $brown-light;
+	color: lighten($brown, 4%);
 	font-size: $small-font-size;
+	font-style: italic;
 }
 
 /* Removes the extra-space at the end of the container */

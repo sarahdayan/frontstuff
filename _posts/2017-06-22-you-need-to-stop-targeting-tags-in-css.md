@@ -9,7 +9,7 @@ CSS seems easy to most developers. Because of its apparent simplicity, and becau
 
 If you look into CSS methodologies like [BEM][bem]{:target="_blank"} or [SMACSS][smacss]{:target="_blank"}, one of the first things you'll be told is **not to style on tag names** and use classes instead. This can be a big rebuttal when you're not used to it. Why add classes when you could simply target tag names? Why increase the size of your HTML and CSS files instead of using what's already there and works perfectly?
 
-### Tags are agnostic
+## Tags are agnostic
 
 A `div` or a `strong` are abstract entities. They're not aware of your project's context. They don't *know* what they're being used for. Some of them have a functional purpose (an `a` to create a hyperlink, a `form` to submit user input, etc.) but this is nothing more than a reusable, context-unaware component. Picking an HTML tag over another makes sense semantically, or when it comes to either accessibility or SEO. They're a set of tools to help you give structure your content. They're not responsible for what the app looks like **and they should never be**.
 
