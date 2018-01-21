@@ -7,6 +7,8 @@ $base-line-height: 1.5;
 
 $spacing-unit: 3.2rem;
 
+/* Light scheme */
+
 $white: #fff;
 $brown-dark: #2c2a2a; // OK for all text
 $brown-mid: #524949; // OK for all text
@@ -15,11 +17,15 @@ $brown-light: #969292; // OK for text >= 2.4rem
 $brown-lighter: #bfbfbf; // Not for text
 $brown-lightest: #ececec; // Not for text
 
-$text-color: $brown;
-$background-color: $white;
-$brand-color: $brown-dark;
+/* Dark scheme */
+
+$off-white: #f8f8f2;
+$grey: #404346;
+$grey-light: #a7adba;
+$grey-lighter: #4d555e;
+$blue-darkest: #2d3338;
 
 $content-width: 66rem;
 
-$on-phone: 550px;
+$on-phone: 600px;
 $above-phone: $on-phone + 1;

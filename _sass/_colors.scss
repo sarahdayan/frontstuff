@@ -1,0 +1,35 @@
+:root {
+	--brand-color: $brown-dark;
+	--text-color: $brown;
+	--secondary-text-color: lighten($brown, 4%);
+	--tertiary-text-color: $brown-light;
+	--icon-color: $brown-lighter;
+	--title-text-color: $brown-mid;
+	--background-color: $white;
+	--border-color: $brown-lightest;
+	--background-code-color: #faf8f2;
+	--outline-color: $brown-light;
+	--skip-background-color: $brown-mid;
+	--skip-text-color: $white;
+	.highlight {
+		@import 'syntax-highlighting';
+	}
+}
+
+.theme--dark {
+	--brand-color: $off-white;
+	--text-color: $grey-light;
+	--secondary-text-color: darken($grey-light, 4%);
+	--tertiary-text-color: $grey-light;
+	--icon-color: lighten($grey-lighter, 5%);
+	--title-text-color: $off-white;
+	--background-color: $blue-darkest;
+	--border-color: darken($grey-lighter, 10%);
+	--background-code-color: darken($blue-darkest, 5%);
+	--outline-color: lighten($grey-lighter, 5%);
+	--skip-background-color: $off-white;
+	--skip-text-color: $blue-darkest;
+	.highlight {
+		@import 'syntax-highlighting-monokai';
+	}
+}

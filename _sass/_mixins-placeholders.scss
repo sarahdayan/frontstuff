@@ -12,10 +12,10 @@
 
 %script {
 	border-radius: 0.6rem;
-	background: #faf8f2;
+	background: var(--background-code-color);
 	font-family: $code-font-family;
 	font-size: 90%;
-	color: $brown-mid;
+	color: var(--title-text-color);
 	overflow-x: scroll;
 }
 

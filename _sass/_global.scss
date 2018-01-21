@@ -9,8 +9,8 @@ html {
 body {
 	font: $base-font-weight #{$base-font-size}/#{$base-line-height}
 		$base-font-family;
-	color: $text-color;
-	background-color: $background-color;
+	color: var(--text-color);
+	background-color: var(--background-color);
 	font-kerning: normal;
 }
 
@@ -28,11 +28,11 @@ em {
 }
 
 a {
-	color: $brand-color;
+	color: var(--brand-color);
 	text-decoration: none;
 	outline: none;
 	&:focus {
-		outline: 0.2rem dotted $brown-light;
+		outline: 0.2rem dotted var(--outline-color);
 	}
 }
 

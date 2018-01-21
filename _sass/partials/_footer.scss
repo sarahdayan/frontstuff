@@ -1,6 +1,6 @@
 .footer {
 	padding: $spacing-unit 0;
-	font-size: $base-font-size * .85;
+	font-size: $base-font-size * 0.85;
 	text-align: center;
-	border-top: .1rem solid $brown-lightest;
+	border-top: 0.1rem solid var(--border-color);
 }

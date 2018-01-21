@@ -3,7 +3,7 @@
 		display: block;
 		margin-bottom: $spacing-unit / 2;
 		font-size: $small-font-size;
-		color: lighten($brown, 4%);
+		color: var(--secondary-text-color);
 		letter-spacing: $base-font-size * 0.08;
 	}
 	&__title {
@@ -11,7 +11,7 @@
 		margin-bottom: $spacing-unit / 2;
 		font-size: $base-font-size * 1.4;
 		font-weight: 600;
-		color: $brown-dark;
+		color: var(--brand-color);
 		text-decoration: none;
 		&--summary {
 			&:hover {
@@ -29,7 +29,7 @@
 		&--summary {
 			display: inline-block;
 			margin-bottom: $spacing-unit / 2;
-			color: $text-color;
+			color: var(--text-color);
 			text-decoration: none;
 		}
 

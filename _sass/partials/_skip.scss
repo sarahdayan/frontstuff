@@ -4,9 +4,9 @@
 	left: 0;
 	display: block;
 	padding: $spacing-unit / 4 $spacing-unit / 2;
-	background: $brown-mid;
+	background: var(--skip-background-color);
 	font-size: $small-font-size;
-	color: white;
+	color: var(--skip-text-color);
 	border-radius: 0 0 $spacing-unit / 6 0;
 	transform: translateY(-100%);
 	transition: transform 0.1s ease-out;

@@ -24,7 +24,7 @@ h4,
 h5,
 h6 {
 	@extend .post__title;
-	color: $brown-mid;
+	color: var(--title-text-color);
 }
 
 h2 {
@@ -89,7 +89,7 @@ a {
 
 img {
 	padding: $spacing-unit / 3;
-	border: 0.1rem solid $brown-lightest;
+	border: 0.1rem solid var(--border-color);
 }
 
 .highlight {
@@ -102,7 +102,7 @@ img {
 
 .caption {
 	margin-top: -#{$spacing-unit / 2};
-	color: lighten($brown, 4%);
+	color: var(--secondary-text-color);
 	font-size: $small-font-size;
 	font-style: italic;
 }

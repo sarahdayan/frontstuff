@@ -14,7 +14,7 @@
 		flex-basis: 50%;
 		flex-grow: 2;
 		border-radius: $spacing-unit / 6;
-		border: 0.1rem solid $brown-lightest;
+		border: 0.1rem solid var(--border-color);
 		text-align: center;
 	}
 	&__link {
@@ -23,7 +23,7 @@
 		white-space: nowrap;
 		transition: background 0.1s ease-out;
 		&:hover {
-			background: $brown-lightest;
+			background: var(--border-color);
 		}
 	}
 	&--both {
