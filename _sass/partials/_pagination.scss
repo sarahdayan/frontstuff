@@ -21,7 +21,7 @@
 		display: block;
 		padding: $spacing-unit / 2 $spacing-unit;
 		white-space: nowrap;
-		transition: all 0.2s linear;
+		transition: background 0.1s ease-out;
 		&:hover {
 			background: $brown-lightest;
 		}

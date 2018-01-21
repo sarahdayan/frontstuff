@@ -32,7 +32,7 @@ a {
 	text-decoration: none;
 	outline: none;
 	&:focus {
-		outline: 0.2rem dotted $brown;
+		outline: 0.2rem dotted $brown-light;
 	}
 }
 

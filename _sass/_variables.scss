@@ -2,18 +2,18 @@ $base-font-family: 'freight-text-pro', serif;
 $code-font-family: 'inconsolata', monospace;
 $base-font-size: 2.2rem;
 $base-font-weight: 400;
-$small-font-size: $base-font-size * 0.8;
+$small-font-size: $base-font-size * 0.85;
 $base-line-height: 1.5;
 
 $spacing-unit: 3.2rem;
 
 $white: #fff;
-$brown-dark: #373131;
-$brown-mid: lighten($brown-dark, 10%);
-$brown: #776969;
-$brown-light: desaturate(#b6a2a2, 10%);
-$brown-lighter: lighten(desaturate($brown-light, 10%), 15%);
-$brown-lightest: lighten($brown-lighter, 10%);
+$brown-dark: #2c2a2a; // OK for all text
+$brown-mid: #524949; // OK for all text
+$brown: #776969; // OK for all text
+$brown-light: #969292; // OK for text >= 1.8rem
+$brown-lighter: #bfbfbf; // Not for text
+$brown-lightest: #ececec; // Not for text
 
 $text-color: $brown;
 $background-color: $white;
