@@ -1,6 +1,7 @@
 .header {
 	padding: $spacing-unit / 2 0 $spacing-unit;
 	border-bottom: 0.1rem solid var(--border-color);
+	transition: border-bottom 0.1s ease-out;
 	&__inner {
 		display: flex;
 		align-items: flex-end;

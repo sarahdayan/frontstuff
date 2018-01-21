@@ -12,6 +12,7 @@ body {
 	color: var(--text-color);
 	background-color: var(--background-color);
 	font-kerning: normal;
+	transition: background-color 0.1s ease-out;
 }
 
 img {
@@ -38,4 +39,16 @@ a {
 
 abbr {
 	cursor: help;
+}
+
+button {
+	padding: 0;
+	background: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	text-transform: inherit;
+	letter-spacing: inherit;
+	border: none;
+	cursor: pointer;
 }

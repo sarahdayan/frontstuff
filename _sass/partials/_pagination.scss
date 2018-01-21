@@ -16,6 +16,7 @@
 		border-radius: $spacing-unit / 6;
 		border: 0.1rem solid var(--border-color);
 		text-align: center;
+		transition: border 0.1s ease-out;
 	}
 	&__link {
 		display: block;

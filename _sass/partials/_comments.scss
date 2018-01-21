@@ -2,4 +2,5 @@
 	margin-top: $spacing-unit * 2;
 	padding-top: $spacing-unit * 2;
 	border-top: 0.1rem solid var(--border-color);
+	transition: border-top 0.1s ease-out;
 }

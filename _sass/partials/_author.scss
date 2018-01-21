@@ -3,6 +3,7 @@
 	padding-top: $spacing-unit * 2;
 	border-top: 0.1rem solid var(--border-color);
 	font-size: $base-font-size * 0.825;
+	transition: border-top 0.1s ease-out;
 	&__name {
 		margin-bottom: $spacing-unit / 5;
 		font-size: $base-font-size;

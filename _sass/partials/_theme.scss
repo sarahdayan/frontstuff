@@ -1,0 +1,26 @@
+.theme {
+	&__switch {
+		display: block;
+		position: fixed;
+		bottom: $spacing-unit;
+		right: $spacing-unit;
+		width: $spacing-unit;
+		height: $spacing-unit;
+		color: var(--icon-color);
+		transition: color 0.1s ease-out;
+		&:hover {
+			color: var(--tertiary-text-color);
+		}
+		.icon--light {
+			display: none;
+		}
+		&--dark {
+			.icon--light {
+				display: block;
+			}
+			.icon--dark {
+				display: none;
+			}
+		}
+	}
+}
