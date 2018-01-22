@@ -10,17 +10,23 @@
 	}
 }
 
+@mixin variable($property, $value, $map: $colors) {
+	#{$property}: map-get($map, $value);
+	#{$property}: var(unquote('--#{$value}'));
+}
+
 %script {
 	border-radius: 0.6rem;
-	background: var(--background-code-color);
+	@include variable('background', 'background-code-color');
 	font-family: $code-font-family;
 	font-size: 90%;
-	color: var(--title-text-color);
+	@include variable('color', 'title-text-color');
 	overflow-x: scroll;
 }
 
 %code {
 	padding: $spacing-unit / 8 $spacing-unit / 4;
+	@include variable('color', 'inline-code-color');
 	@extend %script;
 	@extend .nl;
 }

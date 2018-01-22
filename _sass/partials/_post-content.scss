@@ -24,7 +24,7 @@ h4,
 h5,
 h6 {
 	@extend .post__title;
-	color: var(--title-text-color);
+	@include variable('color', 'title-text-color');
 }
 
 h2 {
@@ -89,7 +89,8 @@ a {
 
 img {
 	padding: $spacing-unit / 3;
-	border: 0.1rem solid var(--border-color);
+	border: 0.1rem solid;
+	@include variable('border-color', 'border-color');
 }
 
 .highlight {
@@ -102,7 +103,7 @@ img {
 
 .caption {
 	margin-top: -#{$spacing-unit / 2};
-	color: var(--secondary-text-color);
+	@include variable('color', 'secondary-text-color');
 	font-size: $small-font-size;
 	font-style: italic;
 }

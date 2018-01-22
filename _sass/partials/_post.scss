@@ -3,7 +3,7 @@
 		display: inline-block;
 		margin-bottom: $spacing-unit / 2;
 		font-size: $small-font-size;
-		color: var(--secondary-text-color);
+		@include variable('color', 'secondary-text-color');
 		letter-spacing: $base-font-size * 0.08;
 		text-decoration: none;
 	}
@@ -12,7 +12,7 @@
 		margin-bottom: $spacing-unit / 2;
 		font-size: $base-font-size * 1.4;
 		font-weight: 600;
-		color: var(--brand-color);
+		@include variable('color', 'brand-color');
 		text-decoration: none;
 		&--summary {
 			&:hover {
@@ -32,10 +32,9 @@
 		&--summary {
 			display: inline-block;
 			margin-bottom: $spacing-unit / 2;
-			color: var(--text-color);
+			@include variable('color', 'text-color');
 			text-decoration: none;
 		}
-
 		@import 'partials/post-content';
 	}
 	&__more {

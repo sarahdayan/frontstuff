@@ -1,13 +1,14 @@
 .author {
 	margin-top: $spacing-unit * 2;
 	padding-top: $spacing-unit * 2;
-	border-top: 0.1rem solid var(--border-color);
+	border-top: 0.1rem solid;
+	@include variable('border-color', 'border-color');
 	font-size: $base-font-size * 0.825;
 	&__name {
 		margin-bottom: $spacing-unit / 5;
 		font-size: $base-font-size;
 		font-weight: 600;
-		color: var(--brand-color);
+		@include variable('color', 'brand-color');
 	}
 	@include media-query-max($on-phone) {
 		margin-top: $spacing-unit;

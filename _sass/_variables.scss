@@ -25,6 +25,43 @@ $grey-light: #a7adba;
 $grey-lighter: #4d555e;
 $blue-darkest: #2d3338;
 
+/* Semantic colors */
+
+$colors: (
+	light:
+		(
+			brand-color: #{$brown-dark},
+			text-color: #{$brown},
+			secondary-text-color: #{lighten($brown, 4%)},
+			tertiary-text-color: #{$brown-light},
+			icon-color: #{$brown-lighter},
+			title-text-color: #{$brown-mid},
+			background-color: #{$white},
+			border-color: #{$brown-lightest},
+			background-code-color: #faf8f2,
+			inline-code-color: #990000,
+			outline-color: #{$brown-light},
+			skip-background-color: #{$brown-mid},
+			skip-text-color: #{$white}
+		),
+	dark:
+		(
+			brand-color: #{$off-white},
+			text-color: #{$grey-light},
+			secondary-text-color: #{darken($grey-light, 4%)},
+			tertiary-text-color: #{$grey-light},
+			icon-color: #{lighten($grey-lighter, 5%)},
+			title-text-color: #{$off-white},
+			background-color: #{$blue-darkest},
+			border-color: #{darken($grey-lighter, 10%)},
+			background-code-color: #{darken($blue-darkest, 5%)},
+			inline-code-color: #{$off-white},
+			outline-color: #{lighten($grey-lighter, 5%)},
+			skip-background-color: #{$off-white},
+			skip-text-color: #{$blue-darkest}
+		)
+);
+
 $content-width: 66rem;
 
 $on-phone: 600px;
