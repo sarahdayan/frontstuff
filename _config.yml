@@ -32,7 +32,7 @@ paginate: 5
 paginate_path: "/page/:num"
 
 # Build settings
-env: dev
+env: production
 assets:
   autoprefixer:
     browsers:
