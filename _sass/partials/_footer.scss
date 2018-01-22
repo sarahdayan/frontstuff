@@ -2,6 +2,7 @@
 	padding: $spacing-unit 0;
 	font-size: $base-font-size * 0.85;
 	text-align: center;
-	border-top: 0.1rem solid var(--border-color);
+	border-top: 0.1rem solid;
+	@include variable('border-color', 'border-color');
 	transition: border-top 0.1s ease-out;
 }

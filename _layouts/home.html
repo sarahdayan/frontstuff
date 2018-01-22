@@ -5,11 +5,13 @@ layout: default
 	<ul class="posts">
 		{% for post in paginator.posts %}
 			<li class="posts__post post">
-				<span class="post__meta">
-					{% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
-					{{ post.date | date: date_format }}
-				</span>
 				<a class="post__link" href="{{ post.url | relative_url }}">
+					<div>
+						<span class="post__meta">
+							{% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
+							{{ post.date | date: date_format }}
+						</span>
+					</div>
 					<h2 class="post__title post__title--summary">{{ post.title | escape }}</h2>
 					<p class="post__content post__content--summary">{{ post.content | strip_html | truncatewords: 30 }}</p>
 					<p class="post__more">

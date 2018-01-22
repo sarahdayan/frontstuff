@@ -1,6 +1,7 @@
 .comments {
 	margin-top: $spacing-unit * 2;
 	padding-top: $spacing-unit * 2;
-	border-top: 0.1rem solid var(--border-color);
+	border-top: 0.1rem solid;
+	@include variable('border-color', 'border-color');
 	transition: border-top 0.1s ease-out;
 }
