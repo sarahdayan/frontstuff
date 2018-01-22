@@ -27,10 +27,12 @@ github_username: sarahdayan
 twitter_username: frontstuff_io
 comments: false
 
+# Paginate settings
 paginate: 5
 paginate_path: "/page/:num"
 
 # Build settings
+env: dev
 assets:
   autoprefixer:
     browsers:
