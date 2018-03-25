@@ -4,7 +4,6 @@
 		margin-bottom: $spacing-unit / 2;
 		font-size: $small-font-size;
 		@include variable('color', 'secondary-text-color');
-		letter-spacing: $base-font-size * 0.08;
 		text-decoration: none;
 	}
 	&__title {
