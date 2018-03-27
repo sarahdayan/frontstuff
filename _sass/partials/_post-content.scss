@@ -44,11 +44,16 @@ h6 {
 
 ul,
 ol {
-	padding-left: $spacing-unit;
+	padding-left: $spacing-unit / 1.5;
 }
 
 ul {
-	list-style: initial;
+	list-style-type: square;
+}
+
+li ul {
+	margin-bottom: 0;
+	padding-left: $spacing-unit;
 }
 
 ol {
