@@ -94,6 +94,7 @@ a {
 }
 
 img {
+	width: 100%;
 	padding: $spacing-unit / 3;
 	border: 0.1rem solid;
 	@include variable('border-color', 'border-color');
