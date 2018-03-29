@@ -76,7 +76,7 @@ Now because they're time-consuming, it's important that code reviews observe a f
 
 All formatting and linting should happen before committing. It shouldn't distract the reviewer from doing their job, and it shouldn't break the build. This is why [lint-staged][github:lint-staged] is so useful: every time you commit, it will act as a pre-commit hook and run a script of your choosing.
 
-In @Dinero.js, here's what's my lint-staged configuration looks like:
+In Dinero.js, here's what's my lint-staged configuration looks like:
 
 ```json
 {
