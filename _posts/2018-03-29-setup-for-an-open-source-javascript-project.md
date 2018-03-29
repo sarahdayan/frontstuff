@@ -78,13 +78,13 @@ All formatting and linting should happen before committing. It shouldn't distrac
 
 In Dinero.js, here's what's my lint-staged configuration looks like:
 
-```json
+{% highlight json %}
 {
   "lint-staged": {
     "*.js": ["npm run lint!", "git add"]
   }
 }
-```
+{% endhighlight %}
 
 The `npm run lint!` command sequentially triggers two other scripts: `npm run format` (Prettier), then `npm run lint` (ESLint). Every time I try to commit a JavaScript file, Prettier will reformat it. Then, ESLint will perform a scan: if it passes, the commit will go through. Otherwise, ESLint will throw an error and the commit will be aborted.
 
@@ -96,7 +96,7 @@ Documentation should live as close as possible from the code it describes. This 
 
 With JSDoc, all you need to do is add a comment with specific tags and descriptions above every significative part of the code (a function, a module, etc.)
 
-```js
+{% highlight js %}
 {
   /**
    * Returns the currency.
@@ -111,7 +111,7 @@ With JSDoc, all you need to do is add a comment with specific tags and descripti
     return currency
   }
 }
-```
+{% endhighlight %}
 This doc block has a description, one example and a typed return value.
 {:.caption}
 
@@ -147,7 +147,7 @@ Now if you're just starting out, unit testing may seem a bit scary. The good new
 
 Here's an excerpt from my unit tests for Dinero.js:
 
-```js
+{% highlight js %}
 import chai from 'chai'
 import Dinero from '../../src/dinero'
 
@@ -163,7 +163,7 @@ describe('Dinero', () => {
     })
   })
 })
-```
+{% endhighlight %}
 
 This JavaScript file, called a "spec", uses the Mocha framework and the Chai assertion library. The public API is built to look like actual English sentences: even non-technical people can read the spec files and understand what's going on. This makes it easy for new contributors, because the learning curve is almost non-existent.
 
