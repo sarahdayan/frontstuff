@@ -42,7 +42,11 @@ $colors: (
 			inline-code-color: #990000,
 			outline-color: #{$brown-light},
 			skip-background-color: #{$brown-mid},
-			skip-text-color: #{$white}
+			skip-text-color: #{$white},
+			success-color: #d4ece6,
+			success-text-color: #7ca89d,
+			error-color: #f8d0c8,
+			error-text-color: #c98d82
 		),
 	dark:
 		(
