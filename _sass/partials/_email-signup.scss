@@ -26,6 +26,9 @@
 	&__groups {
 		display: flex;
 		margin: 0 (-$spacing-unit / 3) $spacing-unit / 2;
+		@include media-query-max($on-phone) {
+			display: block;
+		}
 	}
 	&__group {
 		flex-grow: 1;
