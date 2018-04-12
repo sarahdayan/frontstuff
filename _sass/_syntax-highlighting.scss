@@ -1,6 +1,5 @@
 .c {
 	@include variable('color', 'text-color');
-	font-style: italic;
 } // Comment
 .err {
 	color: #a61717;
@@ -14,19 +13,15 @@
 } // Operator
 .cm {
 	color: #717160;
-	font-style: italic;
 } // Comment.Multiline
 .cp {
 	color: #999999;
-	font-style: italic;
 } // Comment.Preproc
 .c1 {
 	color: #717160;
-	font-style: italic;
 } // Comment.Single
 .cs {
 	color: #999999;
-	font-style: italic;
 } // Comment.Special
 .gd {
 	color: #000000;
