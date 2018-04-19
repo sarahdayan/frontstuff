@@ -37,7 +37,7 @@ You can't solely rely on percentages or divisions to split money because **it's 
 
 ## Engineering to the rescue
 
-As you can see there are many more to money than meets the eye, and it's more than simple `Number` data types can take.
+As you can see, there is much more to money than meets the eye, and it's more than simple `Number` data types can take.
 
 Fortunately, **software engineer [Martin Fowler][martinfowler] came up with a solution**. In [*Patterns of Enterprise Application Architecture*][martinfowler:eaa], he describes [a pattern for monetary values][martinfowler:eaa:money]:
 
@@ -127,7 +127,7 @@ Dinero.globalLocale = 'de-DE'
 Dinero({ amount: 500 }).toFormat() // returns "5,00 $"
 {% endhighlight %}
 
-### Native Intl support
+### Native Internationalization support
 
 Traditionally, libraries use locale files for internationalization. If you're exhaustive, **they tend to make libraries much heavier**.
 
