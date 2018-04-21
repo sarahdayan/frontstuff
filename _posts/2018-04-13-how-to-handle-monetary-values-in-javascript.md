@@ -73,7 +73,7 @@ You can multiply floats into integers before you calculate, then divide them bac
 
 It's a fine solution but requires extra calculations either on object construction or on each manipulation. This isn’t necessarily draining on performances, but still more process work than necessary.
 
-A third alternative is to directly store values in cents, relative to the unit. If you need to store 10 cents, you won't store `0.1` nor `10`, but `100`. This allows you to work with integers only, **which means safe calculations** (until you hit [big numbers][mdn:max-safe-integer]) **and great performances**.
+A third alternative is to directly store values in cents, relative to the unit. If you need to store 1, you won't store `0.1`, but `10`. This allows you to work with integers only, **which means safe calculations** (until you hit [big numbers][mdn:max-safe-integer]) **and great performances**.
 
 ## Dinero.js, an immutable library to create, calculate and format monetary values
 
