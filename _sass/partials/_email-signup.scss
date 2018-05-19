@@ -1,6 +1,6 @@
 .email-signup {
 	margin-top: $spacing-unit * 2;
-	font-size: $base-font-size * 0.825;
+	font-size: $base-font-size * 0.725;
 	&__title {
 		display: inline-block;
 		margin-bottom: $spacing-unit / 2;
@@ -58,6 +58,12 @@
 		transition: all 0.1s linear;
 		&:hover {
 			@include variable('background-color', 'secondary-text-color');
+		}
+	}
+	&__paragraph {
+		margin-bottom: $spacing-unit / 2;
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
 	@include media-query-max($on-phone) {
