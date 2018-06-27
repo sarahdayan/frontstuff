@@ -4,33 +4,35 @@ title:  "How I Dropped 250 KB of Dead CSS Weight with PurgeCSS"
 date:   2018-06-25 08:00:00 +0200
 ---
 
-I'm [a big advocate for utility-first CSS]({% post_url 2018-01-15-in-defense-of-utility-first-css %}). After trying several methods over the years, it's what I found to be **the best, most maintainable and most scalable way of writing CSS to this day**.
+I'm [a big advocate for utility-first CSS]({% post_url 2018-01-15-in-defense-of-utility-first-css %}). After trying several methods over the years, it's what I found to be **the best, most maintainable and scalable way of writing CSS to this day**.
 
-When my coworker [Clément Denoix][github:clemfromspace] and I built [api-search.io][api-search], I thus decided to use [Tailwind CSS][tailwindcss] to style it: a theme-agnostic, fully customizable utility-first library.
+When my coworker [Clément Denoix][github:clemfromspace] and I built [api-search.io][api-search], I decided to use [Tailwind CSS][tailwindcss] to style it: a theme-agnostic, fully customizable utility-first library.
 
 ![Tailwind CSS](assets/2018-06-25/tailwind-css.png)
 
-The whole point of a library is to give you access to a broad set of tools to use at will. The problem is, since you usually only use a subset of it, **you end up with a lot of unused CSS rules in your final build**.
+The whole point of a library is to give you access to a broad set of tools to use at will. The problem is, since you usually use only a subset of it, **you end up with a lot of unused CSS rules in your final build**.
 
-In my case, not only did I load the entire Tailwind CSS library, but I also added several variants to some modules. That ended up making the final, built and minified CSS file weight **259 KB** (before GZip). That's quite heavy when you consider the website is a simple single-page app with a minimal design.
+In my case, not only did I load the entire Tailwind CSS library, but I also added several variants to some modules. That ended up making the final minified CSS file weight **259 KB** (before GZip). That's quite heavy when you consider the website is a simple single-page app with a minimal design.
 
-You don't want to load each utility by hand when you need it. That would be a long and cumbersome task. A better scenario is to have everything at your disposal during development, and **automatically remove what you didn't use during the build step**.
+You don't want to load each utility by hand when you need it. That would be a long and cumbersome task. A better scenario is to have everything at your disposal during development and **automatically remove what you didn't use during the build step**.
 
 In JavaScript, we call it [tree-shaking][mdn:tree-shaking]. Now, thanks to [PurgeCSS][purgecss], **you can do the same with your CSS codebase**.
 
+PurgeCSS analyzes your content files and your CSS, then matches the selectors together. If it doesn't find any occurrence of a selector in the content, it removes it from the CSS file.
+
+That's the idea behind PurgeCSS, and for the most part, this can work out of the box. However, there are some areas in any website that may require some more thinking before letting PurgeCSS do its magic.
+
 ## Splitting my CSS
 
-PurgeCSS analyzes your content files and your CSS, then matches the selectors together. If it doesn't find any occurrence of a selector in the content, it removes it from the CSS file. For that reason, **using PurgeCSS on my entire CSS codebase wouldn't work**.
-
-The project contains three kinds of CSS:
+The project contains three main CSS files:
 
 - A CSS reset called [normalize.css][github:normalize.css], included in Tailwind CSS.
 - [Tailwind CSS][tailwindcss], the most substantial part of my CSS codebase.
 - Some custom CSS, mostly for styling the [InstantSearch][algolia:react-instantsearch] components to which I couldn't add classes.
 
-The tool can't detect I need to keep selectors such as `.ais-Highlight`, **because the components that use it only show up in the DOM at runtime**. Same goes with `normalize.css`: I'm relying on it to reset browser styles, but many of the related components will never be matched because they're generated in JavaScript.
+PurgeCSS can't detect that I need to keep selectors such as `.ais-Highlight`, **because the components that use it only show up in the DOM at runtime**. Same goes with `normalize.css`: I'm relying on it to reset browser styles, but many of the related components will never be matched because they're generated in JavaScript.
 
-In the case of classes starting with `.ais-`, we can sort it out with [whitelisting](#whitelisting-runtime-classes). Now when it comes to reset styles, selectors are a bit trickier to track down. Plus, the size of `normalize.css` is pretty insignificant and isn't bound to change, so in this case, I decided to ignore the file altogether. Consequently, **I had to split styles before running PurgeCSS**.
+In the case of classes starting with `.ais-`, we can sort them out with [whitelisting](#whitelisting-runtime-classes). But when it comes to reset styles, selectors are a bit trickier to track down. Plus, the size of `normalize.css` is pretty insignificant and isn't bound to change, so in this case, I decided to ignore the file altogether. Consequently, **I had to split styles before running PurgeCSS**.
 
 My initial CSS configuration looked like this:
 
