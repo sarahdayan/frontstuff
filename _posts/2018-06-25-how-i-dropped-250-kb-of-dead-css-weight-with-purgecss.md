@@ -18,9 +18,7 @@ You don't want to load each utility by hand when you need it. That would be a lo
 
 In JavaScript, we call it [tree-shaking][mdn:tree-shaking]. Now, thanks to [PurgeCSS][purgecss], **you can do the same with your CSS codebase**.
 
-PurgeCSS analyzes your content files and your CSS, then matches the selectors together. If it doesn't find any occurrence of a selector in the content, it removes it from the CSS file.
-
-That's the idea behind PurgeCSS, and for the most part, this can work out of the box. However, there are some areas in any website that may require some more thinking before letting PurgeCSS do its magic.
+PurgeCSS analyzes your content files and your CSS, then matches the selectors together. If it doesn't find any occurrence of a selector in the content, it removes it from the CSS file. For the most part, **this can work out of the box**. However, there are some areas in any website that may require some more thinking before letting PurgeCSS do its magic.
 
 ## Splitting my CSS
 
