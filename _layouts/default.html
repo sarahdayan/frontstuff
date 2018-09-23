@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-	{% include head.html %}
-	<body>
-		<a class="skip" href="#content">Skip to main content</a>
-		{% include header.html %}
-		<main id="content" class="content" aria-label="Content">
-			{{ content }}
-		</main>
-		{% include footer.html %}
-		{% include typekit.html %}
-		{% include mailchimp-validate.html %}
-		{% include google-analytics.html %}
-	</body>
+{% include head.html %}
+
+<body>
+	<a class="skip" href="#content">Skip to main content</a>
+	{% include header.html %}
+	<main id="content" class="content" aria-label="Content">
+		{{ content }}
+	</main>
+	{% include footer.html %}
+	{% include typekit.html %}
+	{% include mailchimp-validate.html %}
+	{% include google-analytics.html %}
+</body>
+
 </html>

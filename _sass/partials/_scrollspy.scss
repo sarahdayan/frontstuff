@@ -1,0 +1,23 @@
+.scrollspy {
+  position: relative;
+  &-inner {
+    position: sticky;
+    top: 3.2rem;
+    ul {
+      display: block;
+      padding-left: $spacing-unit / 2;
+      font-size: $base-font-size * 0.9;
+      color: var(--icon-color);
+    }
+    ul {
+      list-style-type: square;
+    }
+    li ul {
+      margin-bottom: 0;
+      padding-left: $spacing-unit;
+    }
+    a {
+      color: var(--tertiary-text-color);
+    }
+  }
+}

@@ -3,25 +3,24 @@
 ---
 
 @charset 'utf-8';
-
-@import 'reset';
-@import 'variables';
-@import 'mixins-placeholders';
-@import 'colors';
-@import 'global';
-@import 'container';
-@import 'embed';
-@import 'img';
-@import 'icon';
-@import 'media-object';
-
-@import 'partials/header';
-@import 'partials/skip';
-@import 'partials/content';
-@import 'partials/pagination';
-@import 'partials/posts';
-@import 'partials/post';
-@import 'partials/author';
-@import 'partials/email-signup';
-@import 'partials/comments';
-@import 'partials/footer';
+@import "reset";
+@import "variables";
+@import "mixins-placeholders";
+@import "colors";
+@import "global";
+@import "container";
+@import "embed";
+@import "img";
+@import "icon";
+@import "media-object";
+@import "partials/header";
+@import "partials/skip";
+@import "partials/content";
+@import "partials/scrollspy";
+@import "partials/pagination";
+@import "partials/posts";
+@import "partials/post";
+@import "partials/author";
+@import "partials/email-signup";
+@import "partials/comments";
+@import "partials/footer";

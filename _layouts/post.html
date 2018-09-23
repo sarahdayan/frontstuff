@@ -1,8 +1,9 @@
 ---
 layout: default
 ---
-<div class="container">
-	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div style="display: flex">
+	<div style="width: calc((100% - 66rem) / 2)"></div>
+	<article style="flex-shrink: 0; width: 100%; max-width: 66rem; padding: 0 3.2rem" class="post" itemscope itemtype="http://schema.org/BlogPosting">
 		<header class="post__header">
 			<div>
 				<p class="post__meta">
@@ -11,7 +12,7 @@ layout: default
 						{{ page.date | date: date_format }}
 					</time>
 					{% if page.author %}
-						| <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+					| <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
 					{% endif %}
 				</p>
 			</div>
@@ -21,7 +22,13 @@ layout: default
 			{{ content }}
 		</div>
 	</article>
+	<div style="width: calc((100% - 66rem) / 2)" id="scrollspy" class="scrollspy">
+		<div class="scrollspy-inner">
+			{% include toc.html html=content %}
+		</div>
+	</div>
 </div>
+
 {% include email-signup.html %}
 {% include author.html %}
 {% if site.comments and page.comments %}
@@ -33,7 +40,7 @@ layout: default
 				this.page.url = '{{ page.url | absolute_url }}';
 				this.page.identifier = '{{ page.url | absolute_url }}';
 			};
-			(function() {
+			(function () {
 				var d = document, s = d.createElement('script');
 				s.src = 'https://frontstuff.disqus.com/embed.js';
 				s.setAttribute('data-timestamp', + new Date());
