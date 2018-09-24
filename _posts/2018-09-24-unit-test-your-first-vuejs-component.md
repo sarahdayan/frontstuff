@@ -343,5 +343,5 @@ Don't worry if you didn't get everything, or if you struggle with writing your f
 [wiki:coupling]: https://en.wikipedia.org/wiki/Coupling_(computer_programming)
 [selenium]: https://www.seleniumhq.org/
 [cypressio]: https://www.cypress.io/
-[github:sarahdayan:star-rating-vue-js-tutorial:rating-spec]: https://github.com/sarahdayan/star-rating-vue-js-tutorial/blob/develop/tests/unit/Rating.spec.js
+[github:sarahdayan:star-rating-vue-js-tutorial:rating-spec]: https://github.com/sarahdayan/star-rating-vue-js-tutorial/blob/tests/tests/unit/Rating.spec.js
 [twitter:frontstuff_io]: https://twitter.com/{{ site.twitter_username }}
