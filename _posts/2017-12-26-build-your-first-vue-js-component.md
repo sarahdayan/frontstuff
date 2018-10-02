@@ -3,6 +3,7 @@ layout: post
 title:  "Build Your First Vue.js Component"
 date:   2017-12-26 11:20:00 +0200
 comments: true
+outdated: true
 ---
 
 I remember when I picked up CakePHP back in the days, I loved how easy it was to get started with. Not only were the docs well-structured and exhaustive, but they were also user-friendly. Years later, this is exactly what I found with Vue.js. Yet there's one thing the Vue docs are still short of compared to Cake: **a real-life project tutorial**.

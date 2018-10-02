@@ -1,0 +1,14 @@
+.alert {
+  margin-bottom: $spacing-unit;
+  padding: $spacing-unit;
+  border-radius: $spacing-unit / 3;
+  &--warning {
+    @include variable("background", "warning-color");
+    @include variable("color", "warning-text-color");
+  }
+  > *:last-child,
+  > *:last-child > *:last-child,
+  > *:last-child > *:last-child > *:last-child {
+    margin-bottom: 0;
+  }
+}

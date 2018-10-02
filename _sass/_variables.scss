@@ -1,5 +1,5 @@
-$base-font-family: 'bagatela', serif;
-$code-font-family: 'inconsolata', monospace;
+$base-font-family: "bagatela", serif;
+$code-font-family: "inconsolata", monospace;
 $base-font-size: 2.2rem;
 $base-font-weight: 400;
 $small-font-size: $base-font-size * 0.85;
@@ -28,42 +28,42 @@ $blue-darkest: #2d3338;
 /* Semantic colors */
 
 $colors: (
-	light:
-		(
-			brand-color: #{$brown-dark},
-			text-color: #{$brown},
-			secondary-text-color: #{lighten($brown, 4%)},
-			tertiary-text-color: #{$brown-light},
-			icon-color: #{$brown-lighter},
-			title-text-color: #{$brown-mid},
-			background-color: #{$white},
-			border-color: #{$brown-lightest},
-			background-code-color: #faf8f2,
-			inline-code-color: #990000,
-			outline-color: #{$brown-light},
-			skip-background-color: #{$brown-mid},
-			skip-text-color: #{$white},
-			success-color: #d4ece6,
-			success-text-color: #7ca89d,
-			error-color: #f8d0c8,
-			error-text-color: #c98d82
-		),
-	dark:
-		(
-			brand-color: #{$off-white},
-			text-color: #{$grey-light},
-			secondary-text-color: #{darken($grey-light, 4%)},
-			tertiary-text-color: #{$grey-light},
-			icon-color: #{lighten($grey-lighter, 5%)},
-			title-text-color: #{$off-white},
-			background-color: #{$blue-darkest},
-			border-color: #{darken($grey-lighter, 10%)},
-			background-code-color: #{darken($blue-darkest, 5%)},
-			inline-code-color: #{$off-white},
-			outline-color: #{lighten($grey-lighter, 5%)},
-			skip-background-color: #{$off-white},
-			skip-text-color: #{$blue-darkest}
-		)
+  light: (
+    brand-color: #{$brown-dark},
+    text-color: #{$brown},
+    secondary-text-color: #{lighten($brown, 4%)},
+    tertiary-text-color: #{$brown-light},
+    icon-color: #{$brown-lighter},
+    title-text-color: #{$brown-mid},
+    background-color: #{$white},
+    border-color: #{$brown-lightest},
+    background-code-color: #faf8f2,
+    inline-code-color: #990000,
+    outline-color: #{$brown-light},
+    skip-background-color: #{$brown-mid},
+    skip-text-color: #{$white},
+    success-color: #d4ece6,
+    success-text-color: #7ca89d,
+    error-color: #f8d0c8,
+    error-text-color: #c98d82,
+    warning-text-color: #f0a202,
+    warning-color: #fff4bf
+  ),
+  dark: (
+    brand-color: #{$off-white},
+    text-color: #{$grey-light},
+    secondary-text-color: #{darken($grey-light, 4%)},
+    tertiary-text-color: #{$grey-light},
+    icon-color: #{lighten($grey-lighter, 5%)},
+    title-text-color: #{$off-white},
+    background-color: #{$blue-darkest},
+    border-color: #{darken($grey-lighter, 10%)},
+    background-code-color: #{darken($blue-darkest, 5%)},
+    inline-code-color: #{$off-white},
+    outline-color: #{lighten($grey-lighter, 5%)},
+    skip-background-color: #{$off-white},
+    skip-text-color: #{$blue-darkest}
+  )
 );
 
 $content-width: 66rem;

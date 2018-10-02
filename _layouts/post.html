@@ -11,13 +11,16 @@ layout: default
 						{{ page.date | date: date_format }}
 					</time>
 					{% if page.author %}
-						| <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+					| <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
 					{% endif %}
 				</p>
 			</div>
 			<h1 class="post__title" itemprop="name headline">{{ page.title | escape }}</h1>
 		</header>
 		<div class="post__content" itemprop="articleBody">
+			{% if page.outdated %}
+			{% include outdated-post.html %}
+			{% endif %}
 			{{ content }}
 		</div>
 	</article>
@@ -33,7 +36,7 @@ layout: default
 				this.page.url = '{{ page.url | absolute_url }}';
 				this.page.identifier = '{{ page.url | absolute_url }}';
 			};
-			(function() {
+			(function () {
 				var d = document, s = d.createElement('script');
 				s.src = 'https://frontstuff.disqus.com/embed.js';
 				s.setAttribute('data-timestamp', + new Date());
