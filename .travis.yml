@@ -1,0 +1,11 @@
+language: ruby
+cache: bundler
+before_install:
+  - gem install bundler
+script:
+  - bundle exec jekyll algolia
+branches:
+  only:
+    - gh-pages
+rvm:
+  - 2.4

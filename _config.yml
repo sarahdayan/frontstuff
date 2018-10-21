@@ -47,3 +47,7 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+
+algolia:
+  application_id: HSORS1ROJD
+  index_name: frontstuff
