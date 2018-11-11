@@ -1,7 +1,7 @@
 .footer {
-	padding: $spacing-unit 0;
-	font-size: $base-font-size * 0.85;
-	text-align: center;
-	border-top: 0.1rem solid;
-	@include variable('border-color', 'border-color');
+  padding: $spacing-unit 0;
+  font-size: $base-font-size * 0.85;
+  text-align: center;
+  border-top: 0.1rem solid;
+  @include variable('border-color', 'border-color');
 }

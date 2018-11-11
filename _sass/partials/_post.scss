@@ -1,46 +1,46 @@
 .post {
-	&__meta {
-		display: inline-block;
-		margin-bottom: $spacing-unit / 2;
-		font-size: $small-font-size;
-		@include variable('color', 'secondary-text-color');
-		text-decoration: none;
-	}
-	&__title {
-		display: inline-block;
-		margin-bottom: $spacing-unit / 2;
-		font-size: $base-font-size * 1.4;
-		font-weight: 600;
-		@include variable('color', 'brand-color');
-		text-decoration: none;
-		&--summary {
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-	}
-	&__link {
-		display: block;
-		margin: -#{$spacing-unit / 2};
-		padding: $spacing-unit / 2;
-		text-decoration: underline;
-		text-decoration-skip: ink;
-		text-decoration-skip-ink: auto;
-	}
-	&__content {
-		&--summary {
-			display: inline-block;
-			margin-bottom: $spacing-unit / 2;
-			@include variable('color', 'text-color');
-			text-decoration: none;
-		}
-		@import 'partials/post-content';
-	}
-	&__more {
-		display: block;
-		width: 100%;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		overflow: hidden;
-	}
+  &__meta {
+    display: inline-block;
+    margin-bottom: $spacing-unit / 2;
+    font-size: $small-font-size;
+    @include variable('color', 'secondary-text-color');
+    text-decoration: none;
+  }
+  &__title {
+    display: inline-block;
+    margin-bottom: $spacing-unit / 2;
+    font-size: $base-font-size * 1.4;
+    font-weight: 600;
+    @include variable('color', 'brand-color');
+    text-decoration: none;
+    &--summary {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &__link {
+    display: block;
+    margin: -#{$spacing-unit / 2};
+    padding: $spacing-unit / 2;
+    text-decoration: underline;
+    text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
+  }
+  &__content {
+    &--summary {
+      display: inline-block;
+      margin-bottom: $spacing-unit / 2;
+      @include variable('color', 'text-color');
+      text-decoration: none;
+    }
+    @import 'partials/post-content';
+  }
+  &__more {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }

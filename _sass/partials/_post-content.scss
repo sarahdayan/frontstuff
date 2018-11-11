@@ -15,7 +15,7 @@ table,
 figure,
 audio,
 video {
-	margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit;
 }
 
 h2,
@@ -23,68 +23,68 @@ h3,
 h4,
 h5,
 h6 {
-	@extend .post__title;
-	display: block;
-	@include variable('color', 'title-text-color');
+  @extend .post__title;
+  display: block;
+  @include variable('color', 'title-text-color');
 }
 
 h2 {
-	font-size: $base-font-size * 1.2;
+  font-size: $base-font-size * 1.2;
 }
 
 h3 {
-	font-size: $base-font-size * 1;
+  font-size: $base-font-size * 1;
 }
 
 h4,
 h5,
 h6 {
-	font-size: $base-font-size;
+  font-size: $base-font-size;
 }
 
 blockquote {
-	position: relative;
-	font-style: italic;
-	&:before {
-		position: absolute;
-		top: 0;
-		left: 0;
-		font-size: 1500%;
-		line-height: $base-font-size * 10;
-		font-style: normal;
-		@include variable('color', 'icon-color');
-		content: '“';
-		z-index: -1;
-	}
+  position: relative;
+  font-style: italic;
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1500%;
+    line-height: $base-font-size * 10;
+    font-style: normal;
+    @include variable('color', 'icon-color');
+    content: '“';
+    z-index: -1;
+  }
 }
 
 ul,
 ol {
-	padding-left: $spacing-unit / 1.5;
+  padding-left: $spacing-unit / 1.5;
 }
 
 ul {
-	list-style-type: square;
+  list-style-type: square;
 }
 
 li ul {
-	margin-bottom: 0;
-	padding-left: $spacing-unit;
+  margin-bottom: 0;
+  padding-left: $spacing-unit;
 }
 
 ol {
-	list-style: reset;
+  list-style: reset;
 }
 
 a {
-	&:hover {
-		text-decoration: underline;
-	}
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 blockquote code,
 > code {
-	@extend %code;
+  @extend %code;
 }
 
 > h2,
@@ -95,31 +95,31 @@ blockquote code,
 > p,
 > ul,
 > ol {
-	code {
-		@extend %code;
-	}
+  code {
+    @extend %code;
+  }
 }
 
 img {
-	width: 100%;
-	padding: $spacing-unit / 3;
-	border: 0.1rem solid;
-	@include variable('border-color', 'border-color');
+  width: 100%;
+  padding: $spacing-unit / 3;
+  border: 0.1rem solid;
+  @include variable('border-color', 'border-color');
 }
 
 .highlight {
-	padding: $spacing-unit;
-	@extend %script;
-	* {
-		margin: 0;
-	}
+  padding: $spacing-unit;
+  @extend %script;
+  * {
+    margin: 0;
+  }
 }
 
 .caption {
-	margin-top: -#{$spacing-unit / 2};
-	@include variable('color', 'secondary-text-color');
-	font-size: $small-font-size;
-	font-style: italic;
+  margin-top: -#{$spacing-unit / 2};
+  @include variable('color', 'secondary-text-color');
+  font-size: $small-font-size;
+  font-style: italic;
 }
 
 /* Removes the extra-space at the end of the container */
@@ -127,5 +127,5 @@ img {
 > *:last-child,
 > *:last-child > *:last-child,
 > *:last-child > *:last-child > *:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }

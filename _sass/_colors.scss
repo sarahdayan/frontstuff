@@ -1,17 +1,17 @@
 :root {
-	@each $key, $value in map-get($colors, 'light') {
-		#{unquote('--#{$key}')}: #{$value};
-	}
-	.highlight {
-		@import 'syntax-highlighting';
-	}
+  @each $key, $value in map-get($colors, 'light') {
+    #{unquote('--#{$key}')}: #{$value};
+  }
+  .highlight {
+    @import 'syntax-highlighting';
+  }
 }
 
 .theme--dark {
-	@each $key, $value in map-get($colors, 'dark') {
-		#{unquote('--#{$key}')}: #{$value};
-	}
-	.highlight {
-		@import 'syntax-highlighting-monokai';
-	}
+  @each $key, $value in map-get($colors, 'dark') {
+    #{unquote('--#{$key}')}: #{$value};
+  }
+  .highlight {
+    @import 'syntax-highlighting-monokai';
+  }
 }

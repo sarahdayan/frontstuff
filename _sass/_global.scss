@@ -1,42 +1,41 @@
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-	font: $base-font-weight #{$base-font-size}/#{$base-line-height}
-		$base-font-family;
-	@include variable('color', 'text-color');
-	@include variable('background-color', 'background-color');
-	font-kerning: normal;
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  @include variable('color', 'text-color');
+  @include variable('background-color', 'background-color');
+  font-kerning: normal;
 }
 
 img {
-	max-width: 100%;
-	vertical-align: middle;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 em {
-	font-style: italic;
+  font-style: italic;
 }
 
 a {
-	@include variable('color', 'brand-color');
-	text-decoration: none;
-	outline: none;
-	&:focus {
-		outline: 0.2rem dotted;
-		@include variable('outline-color', 'outline-color');
-	}
+  @include variable('color', 'brand-color');
+  text-decoration: none;
+  outline: none;
+  &:focus {
+    outline: 0.2rem dotted;
+    @include variable('outline-color', 'outline-color');
+  }
 }
 
 abbr {
-	cursor: help;
+  cursor: help;
 }

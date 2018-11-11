@@ -1,6 +1,6 @@
 .comments {
-	margin-top: $spacing-unit * 2;
-	padding-top: $spacing-unit * 2;
-	border-top: 0.1rem solid;
-	@include variable('border-color', 'border-color');
+  margin-top: $spacing-unit * 2;
+  padding-top: $spacing-unit * 2;
+  border-top: 0.1rem solid;
+  @include variable('border-color', 'border-color');
 }

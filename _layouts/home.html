@@ -2,41 +2,44 @@
 layout: default
 ---
 <div class="container">
-	<ul class="posts">
-		{% for post in paginator.posts %}
-			<li class="posts__post post">
-				<a class="post__link" href="{{ post.url | relative_url }}">
-					<div>
-						<span class="post__meta">
-							{% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
-							{{ post.date | date: date_format }}
-						</span>
-					</div>
-					<h2 class="post__title post__title--summary">{{ post.title | escape }}</h2>
-					<p class="post__content post__content--summary">{{ post.content | strip_html | truncatewords: 30 }}</p>
-					<p class="post__more">
-						<span class="post__more-inner">Read "{{ post.title | escape }}"</span>
-					</p>
-				</a>
-			</li>
-		{% else %}
-			<li class="posts__post post">Nothing to read here. Come back later!</li>
-		{% endfor %}
-	</ul>
-	{% if paginator.total_pages > 1 %}
-		<nav class="pagination {% if paginator.next_page and paginator.previous_page %}pagination--both{% endif %}" aria-label="Pagination Navigation">
-			<ul class="pagination__items">
-				{% if paginator.next_page %}
-					<li class="pagination__item pagination__item--older">
-						<a class="pagination__link" href="{{ paginator.next_page_path | prepend: site.baseurl }}" aria-label="Go to older posts">🍂 Older posts</a>
-					</li>
-				{% endif %}
-				{% if paginator.previous_page %}
-					<li class="pagination__item pagination__item--newer">
-						<a class="pagination__link" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" aria-label="Go to newer posts">🌱 Newer posts</a>
-					</li>
-				{% endif %}
-			</ul>
-		</nav>
-	{% endif %}
+  <ul class="posts">
+    {% for post in paginator.posts %}
+    <li class="posts__post post">
+      <a class="post__link" href="{{ post.url | relative_url }}">
+        <div>
+          <span class="post__meta">
+            {% assign date_format = site.minima.date_format | default: "%B %-d, %Y" %}
+            {{ post.date | date: date_format }}
+          </span>
+        </div>
+        <h2 class="post__title post__title--summary">{{ post.title | escape }}</h2>
+        <p class="post__content post__content--summary">{{ post.content | strip_html | truncatewords: 30 }}</p>
+        <p class="post__more">
+          <span class="post__more-inner">Read "{{ post.title | escape }}"</span>
+        </p>
+      </a>
+    </li>
+    {% else %}
+    <li class="posts__post post">Nothing to read here. Come back later!</li>
+    {% endfor %}
+  </ul>
+  {% if paginator.total_pages > 1 %}
+  <nav class="pagination {% if paginator.next_page and paginator.previous_page %}pagination--both{% endif %}"
+    aria-label="Pagination Navigation">
+    <ul class="pagination__items">
+      {% if paginator.next_page %}
+      <li class="pagination__item pagination__item--older">
+        <a class="pagination__link" href="{{ paginator.next_page_path | prepend: site.baseurl }}" aria-label="Go to older posts">🍂
+          Older posts</a>
+      </li>
+      {% endif %}
+      {% if paginator.previous_page %}
+      <li class="pagination__item pagination__item--newer">
+        <a class="pagination__link" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" aria-label="Go to newer posts">🌱
+          Newer posts</a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
 </div>
