@@ -60,12 +60,6 @@
       @include variable('background-color', 'secondary-text-color');
     }
   }
-  &__paragraph {
-    margin-bottom: $spacing-unit / 2;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
   @include media-query-max($on-phone) {
     margin-top: $spacing-unit;
     padding-top: $spacing-unit;
