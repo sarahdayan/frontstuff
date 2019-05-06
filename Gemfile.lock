@@ -244,7 +244,7 @@ GEM
       forwardable-extended (~> 2.6)
     progressbar (1.10.0)
     public_suffix (2.0.5)
-    rack (1.6.10)
+    rack (1.6.11)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -288,7 +288,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.3.7p456
 
 BUNDLED WITH
-   1.17.1
+   2.0.1
