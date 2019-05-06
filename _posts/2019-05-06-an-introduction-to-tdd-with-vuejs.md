@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "An Introduction to TDD with Vue.js"
-date: 2019-05-06 08:00:00 +0200
+date: 2019-05-06 06:00:00 +0200
 comments: true
 ---
 
