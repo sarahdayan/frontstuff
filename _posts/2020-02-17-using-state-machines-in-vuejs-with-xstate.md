@@ -390,7 +390,7 @@ To persist data automatically, you can use [Vue watchers][vuejs:watchers]{:targe
 
 **State machines model the concept of state, and gives it a framework to properly think about it.** It's a shift of mental model which brings many advantages, including the reliability of decades of mathematical formalism. Additionally, it lets you look at state as a self-contained flow chart, which makes it easier to visualize and share with non-developers.
 
-You probably don't need state machines in every project, especially those with minimal state, or when it doesn't change much. However, they may have a clear advantage over other kinds of state management libraries, if you need such a mechanism in your project.
+You probably don't need state machines in every project, especially those with minimal state, or when it doesn't change much. However, they may have a clear advantage over other kinds of state management libraries, if you need such a mechanism in your project. XState has many more great features to discover, we barely scratched the surface here.
 
 If XState in Vue looks like too much boilerplate, please know that it also ships [Vue bindings for the Vue 3 Composition API][xstate:xstate-vue]{:target="_blank", :rel="noopener"}. You can use this flavor to create state machines in your Vue applications with terser, more functional code.
 
