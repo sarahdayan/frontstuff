@@ -212,7 +212,7 @@ Great! What about creating a focus mode now, and allowing the user to fully coll
 
 **Statecharts are extended state machines.** They introduce additional useful concepts, including nested states. This allows us to compose states into logical groups.
 
-In our case, we want to implement a focus mode where we can collapse the preview. This means that, in addition to being either "rendered" or "raw", the preview can also be "visible" or "hidden". Yet, these two new states aren't independent of the first two: **they condition them**. The preview can only be rendered" or "raw" if it was first "visible".
+In our case, we want to implement a focus mode where we can collapse the preview. This means that, in addition to being either "rendered" or "raw", the preview can also be "visible" or "hidden". Yet, these two new states aren't independent of the first two: **they condition them**. The preview can only be "rendered" or "raw" if it was first "visible".
 
 This is what nested states allow us to do; **encapsulate a set of states within another**. Let's add our new "visible" and "hidden" states at the root of the machine, and nest our existing "rendered" and "raw" within "visible".
 
