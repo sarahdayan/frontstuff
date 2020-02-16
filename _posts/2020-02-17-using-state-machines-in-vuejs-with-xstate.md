@@ -13,8 +13,8 @@ During his talk, David asked: *"is there a better way to model state for dynamic
 
 There are many ways to represent state in modern web applications. In Vue.js, you can use local state (encapsulated within components) or global state (using a state management library like [Vuex][vuex]{:target="_blank", :rel="noopener"}). Wherever you put your state, it usually works the same way: **you represent it with properties that you can change, and you use that property to determine view logic**.
 
-[![Password Modal with Finite State Machine by David Kourshid](assets/2020-02-17/password-modal-with-fsm-david-kourshid.png)][codepen:davidkpiano:password-xstate]{:target="_blank", :rel="noopener"}
-[Password Modal with Finite State Machine][codepen:davidkpiano:password-xstate]{:target="_blank", :rel="noopener"} by [David Kourshid][github:davidkpiano]{:target="_blank", :rel="noopener"}
+[![Password Modal with Finite State Machine by David Khourshid](assets/2020-02-17/password-modal-with-fsm-david-kourshid.png)][codepen:davidkpiano:password-xstate]{:target="_blank", :rel="noopener"}
+[Password Modal with Finite State Machine][codepen:davidkpiano:password-xstate]{:target="_blank", :rel="noopener"} by [David Khourshid][github:davidkpiano]{:target="_blank", :rel="noopener"}
 {:.caption}
 
 Think, for instance, of a password-protected resource. You can input a password and submit it. While it's being validated on the server, the UI goes in a loading state, and you can't interact with it. If the password is invalid, the UI goes in an error state, maybe showing an error message and outlining the input in red, but lets you try again. Finally, when you submit the right password, the UI goes into a success state and moves on to the unlocked resource.
@@ -96,9 +96,9 @@ We can use a state machine to model this.
 
 {% highlight html %}
 <script>
-import { Machine, interpret } from "xstate";
+import { createMachine, interpret } from "xstate";
 
-const toggleMachine = Machine({
+const toggleMachine = createMachine({
   id: "toggle",
   initial: "rendered",
   states: {
@@ -130,14 +130,14 @@ export default {
 </script>
 {% endhighlight %}
 
-Let's analyze this code. First, we import `Machine` and `interpret`. `Machine` is a factory function that lets us create state machines, while `interpret` allows us to parse and execute it in a runtime environment.
+Let's analyze this code. First, we import `createMachine` and `interpret`. `createMachine` is a factory function that lets us create state machines, while `interpret` allows us to parse and execute it in a runtime environment.
 
 An interpreted, running instance of a statechart is a service, which we add to our `data` object as the `toggleService` property. When we start the application, we set a listener for transitions with the `onTransition` method, which we use to assign the new state on a `current` property, which we initialize to the initial state of the machine. In other words, every time we'll dispatch an event to the state machine (resulting in a transition), **we'll also update our reactive Vue state with the state of the machine**.
 
 Now let's look at the machine itself.
 
 {% highlight js %}
-const toggleMachine = Machine({
+const toggleMachine = createMachine({
   id: "toggle",
   initial: "rendered",
   states: {
@@ -217,7 +217,7 @@ In our case, we want to implement a focus mode where we can collapse the preview
 This is what nested states allow us to do; **encapsulate a set of states within another**. Let's add our new "visible" and "hidden" states at the root of the machine, and nest our existing "rendered" and "raw" within "visible".
 
 {% highlight js %}
-const toggleMachine = Machine({
+const toggleMachine = createMachine({
   id: "toggle",
   initial: "visible",
   states: {
@@ -298,7 +298,7 @@ A history state node is a particular node that, when you reach it, tells the mac
 History is a compelling feature that allows us to memorize in which state we left the preview and resume it whenever we make it visible. Let's add it to our state machine.
 
 {% highlight js %}
-const toggleMachine = Machine({
+const toggleMachine = createMachine({
   // …
   states: {
     visible: {
@@ -358,7 +358,7 @@ If the `LocalStorage` is available (not full, and the browser is not in incognit
 We can now use it to hydrate the machine when we start it.
 
 {% highlight js %}
-import { Machine, State, interpret } from 'xstate';
+import { createMachine, State, interpret } from 'xstate';
 
 // …
 
