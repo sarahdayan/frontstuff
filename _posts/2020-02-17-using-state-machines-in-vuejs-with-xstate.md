@@ -7,13 +7,13 @@ comments: true
 
 While state machines used to be an obscure model for the front-end world, it has gained quite some traction lately, mostly thanks to [XState][xstate]{:target="_blank", :rel="noopener"}.
 
-XState is a JavaScript state machine implementation created by Microsoft engineer [David Khourshid][github:davidkpiano]{:target="_blank", :rel="noopener"}. I met David at dotCSS 2019, where he talked about [crafting stateful styles][dotconferences:david-kourshid]{:target="_blank", :rel="noopener"} using finite state machines.
+XState is a JavaScript state machine implementation created by Microsoft engineer [David Khourshid][github:davidkpiano]{:target="_blank", :rel="noopener"}. I met David at dotCSS 2019, where he talked about [crafting stateful styles][dotconferences:david-khourshid]{:target="_blank", :rel="noopener"} using finite state machines.
 
 During his talk, David asked: *"is there a better way to model state for dynamic UIs?"* After all, **state is at the center of what we, front-end engineers, deal with every day**. Think of when you set an app to dark mode, when you load the latest purchases from a given user, or when you momentarily disable a button during data fetching: all you do is managing state. User flows are transitions between UI states, caused by events.
 
 There are many ways to represent state in modern web applications. In Vue.js, you can use local state (encapsulated within components) or global state (using a state management library like [Vuex][vuex]{:target="_blank", :rel="noopener"}). Wherever you put your state, it usually works the same way: **you represent it with properties that you can change, and you use that property to determine view logic**.
 
-[![Password Modal with Finite State Machine by David Khourshid](assets/2020-02-17/password-modal-with-fsm-david-kourshid.png)][codepen:davidkpiano:password-xstate]{:target="_blank", :rel="noopener"}
+[![Password Modal with Finite State Machine by David Khourshid](assets/2020-02-17/password-modal-with-fsm-david-khourshid.png)][codepen:davidkpiano:password-xstate]{:target="_blank", :rel="noopener"}
 [Password Modal with Finite State Machine][codepen:davidkpiano:password-xstate]{:target="_blank", :rel="noopener"} by [David Khourshid][github:davidkpiano]{:target="_blank", :rel="noopener"}
 {:.caption}
 
@@ -398,7 +398,7 @@ You can also find the final code from this tutorial on [GitHub][github:markdown-
 
 [xstate]: https://xstate.js.org/
 [github:davidkpiano]: https://github.com/davidkpiano
-[dotconferences:david-kourshid]: https://www.dotconferences.com/2019/12/david-khourshid-crafting-stateful-styles
+[dotconferences:david-khourshid]: https://www.dotconferences.com/2019/12/david-khourshid-crafting-stateful-styles
 [vuex]: https://vuex.vuejs.org/
 [codepen:davidkpiano:password-xstate]: https://codepen.io/davidkpiano/pen/WKvPBP
 [markdown-editor-vue-xstate]: https://nifty-yalow-295db4.netlify.com/
