@@ -151,9 +151,9 @@ const toggleMachine = createMachine({
 });
 {% endhighlight %}
 
-Our machine has two states; "rendered", which corresponds to rendered Markdown, and "raw", which represents the raw HTML output. Each state node has an `on` property, containing a mapping of all possible transitions. When receiving the `SWITCH` event while the machine is on the "rendered" state, the machine transitions to "raw", and vice versa.
+Our machine has two states; `rendered`, which corresponds to rendered Markdown, and `raw`, which represents the raw HTML output. Each state node has an `on` property, containing a mapping of all possible transitions. When receiving the `SWITCH` event while the machine is on the `rendered` state, the machine transitions to `raw`, and vice versa.
 
-We also set an initial state, "rendered". A state machine must always have a state; it can't be undefined.
+We also set an initial state, `rendered`. A state machine must always have a state; it can't be undefined.
 
 This creates our first user flow and starts defining the application state that we can use it in our template.
 
@@ -178,7 +178,7 @@ This creates our first user flow and starts defining the application state that 
 
 Remember, we're exposing our service on the `current` reactive property. This allows us to use the `matches` method to define view logic based on the current state.
 
-In our case, we're showing the rendered Markdown when the state is "rendered", and the raw HTML when the state is "raw". Let's add a button to transition between states.
+In our case, we're showing the rendered Markdown when the state is `rendered`, and the raw HTML when the state is `raw`. Let's add a button to transition between states.
 
 {% highlight html %}
 {% raw %}
@@ -204,7 +204,7 @@ export default {
 {% endraw %}
 {% endhighlight %}
 
-Now, when clicking the button, we'll send a "SWITCH" event to the service. When the current state is "rendered", it transitions to "raw", and vice versa. As a result, the UI toggles between rendered Markdown and raw HTML.
+Now, when clicking the button, we'll send a `SWITCH` event to the service. When the current state is `rendered`, it transitions to `raw`, and vice versa. As a result, the UI toggles between rendered Markdown and raw HTML.
 
 Great! What about creating a focus mode now, and allowing the user to fully collapse the preview? **This is where [nested states][xstate:hierarchical]{:target="_blank", :rel="noopener"} and statecharts come into play.**
 
@@ -212,9 +212,9 @@ Great! What about creating a focus mode now, and allowing the user to fully coll
 
 **Statecharts are extended state machines.** They introduce additional useful concepts, including nested states. This allows us to compose states into logical groups.
 
-In our case, we want to implement a focus mode where we can collapse the preview. This means that, in addition to being either "rendered" or "raw", the preview can also be "visible" or "hidden". Yet, these two new states aren't independent of the first two: **they condition them**. The preview can only be "rendered" or "raw" if it was first "visible".
+In our case, we want to implement a focus mode where we can collapse the preview. This means that, in addition to being either `rendered` or `raw`, the preview can also be `visible` or `hidden`. Yet, these two new states aren't independent of the first two: **they condition them**. The preview can only be `rendered` or `raw` if it was first `visible`.
 
-This is what nested states allow us to do; **encapsulate a set of states within another**. Let's add our new "visible" and "hidden" states at the root of the machine, and nest our existing "rendered" and "raw" within "visible".
+This is what nested states allow us to do; **encapsulate a set of states within another**. Let's add our new `visible` and `hidden` states at the root of the machine, and nest our existing `rendered` and `raw` within `visible`.
 
 {% highlight js %}
 const toggleMachine = createMachine({
@@ -248,11 +248,11 @@ const toggleMachine = createMachine({
 });
 {% endhighlight %}
 
-We've also created a new event, "TOGGLE", which switches between "visible" and "hidden". The "visible" automatically moves on to its initial child state, "rendered".
+We've also created a new `TOGGLE` event which switches between `visible` and `hidden`. The `visible` state automatically moves on to its initial child state, `rendered`.
 
 > "Wait… I thought state machines could only be in one state at a time!"
 
-Indeed, state machines are always in a single state at a time. Statecharts don't change that; yet, they introduce the concept of composite states. In our case, the "visible" state is a composite state, composed of sub-states. In XState, this means that our machine can be in state "hidden", "visible.rendered", and "visible.raw".
+Indeed, state machines are always in a single state at a time. Statecharts don't change that; yet, they introduce the concept of composite states. In our case, the `visible` state is a composite state, composed of sub-states. In XState, this means that our machine can be in state `hidden`, `visible.rendered`, and `visible.raw`.
 
 At this stage, it might become hard to visualize the entire flow. Fortunately, XState provides a nifty tool: [the visualizer][xstate:viz]{:target="_blank", :rel="noopener"}. This lets you paste any XState state machine, and instantly get an interactive visualization.
 
@@ -289,13 +289,13 @@ We can now use the new states in our template to implement the focus mode.
 
 Neat! We can now entirely toggle the preview.
 
-Now, if you're testing your application in the browser, you'll notice that when you do, you always go back to the initial "rendered" state, even though you switched it to "raw" before hiding the preview. Better user experience would be to automatically go back to the latest substate when transitioning to "visible". Fortunately, **statecharts let us manage this with [history nodes][xstate:history]{:target="_blank", :rel="noopener"}**.
+Now, if you're testing your application in the browser, you'll notice that when you do, you always go back to the initial `rendered` state, even though you switched it to `raw` before hiding the preview. Better user experience would be to automatically go back to the latest substate when transitioning to `visible`. Fortunately, **statecharts let us manage this with [history nodes][xstate:history]{:target="_blank", :rel="noopener"}**.
 
 ### History
 
 A history state node is a particular node that, when you reach it, tells the machine to go to the latest state value of that region. You can have *shallow* history nodes (default), which save only the top-level history value, and *deep* history nodes, which save the entire nested hierarchy.
 
-History is a compelling feature that allows us to memorize in which state we left the preview and resume it whenever we make it visible. Let's add it to our state machine.
+History is a compelling feature that allows us to memorize in which state we left the preview and resume it whenever we make it `visible`. Let's add it to our state machine.
 
 {% highlight js %}
 const toggleMachine = createMachine({
@@ -319,7 +319,7 @@ const toggleMachine = createMachine({
 });
 {% endhighlight %}
 
-Now, whenever the machine receives a "TOGGLE" event while "hidden", it resumes the latest substate of "visible".
+Now, whenever the machine receives a `TOGGLE` event while `hidden`, it resumes the latest substate of `visible`.
 
 <iframe width="100%" height="400" src="https://xstate.js.org/viz/?gist=f582c0f27384dcad4f92dea64d94d940"></iframe>
 
@@ -327,13 +327,11 @@ Our application works well, but it lacks an important feature: **state persisten
 
 ### Persisting and rehydrating state
 
-An XState state is plain, serializable object literal, which means we can persist it as JSON in a web storage system such as `LocalStorage` and resume it when the user comes back to the application.
+An XState state is a plain, serializable object literal, which means we can persist it as JSON in a web storage system such as `LocalStorage` and resume it when the user comes back to the application.
 
 First, let's save our state every time a transition happens. It ensures we never "miss" a state change.
 
 {% highlight js %}
-// …
-
 export default {
   // …
   created() {
@@ -390,9 +388,9 @@ To persist data automatically, you can use [Vue watchers][vuejs:watchers]{:targe
 
 **State machines model the concept of state, and gives it a framework to properly think about it.** It's a shift of mental model which brings many advantages, including the reliability of decades of mathematical formalism. Additionally, it lets you look at state as a self-contained flow chart, which makes it easier to visualize and share with non-developers.
 
-You probably don't need state machines in every project, especially those with minimal state, or when it doesn't change much. However, they may have a clear advantage over other kinds of state management libraries, if you need such a mechanism in your project. XState has many more great features to discover, we barely scratched the surface here.
+You probably don't need state machines in every project, especially those with minimal state, or when it doesn't change much. However, **they may have a clear advantage over other kinds of state management libraries**, if you need such a mechanism in your project. XState has many more great features to discover, we barely scratched the surface here.
 
-If XState in Vue looks like too much boilerplate, please know that it also ships [Vue bindings for the Vue 3 Composition API][xstate:xstate-vue]{:target="_blank", :rel="noopener"}. You can use this flavor to create state machines in your Vue applications with terser, more functional code.
+If XState in Vue looks like too much boilerplate, know that it also ships [Vue bindings for the Vue 3 Composition API][xstate:xstate-vue]{:target="_blank", :rel="noopener"}. You can use this flavor to create state machines in your Vue applications with terser, more functional code.
 
 You can also find the final code from this tutorial on [GitHub][github:markdown-editor-vue-xstate]{:target="_blank", :rel="noopener"}.
 
