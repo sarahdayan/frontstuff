@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using State Machines in Vue.js with XState"
-date: 2020-02-17 08:00:00 +0200
+date: 2020-02-17 07:00:00 +0200
 comments: true
 ---
 
