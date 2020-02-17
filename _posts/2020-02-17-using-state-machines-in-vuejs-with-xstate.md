@@ -11,7 +11,7 @@ XState is a JavaScript state machine implementation created by Microsoft enginee
 
 During his talk, David asked: *"is there a better way to model state for dynamic UIs?"* After all, **state is at the center of what we, front-end engineers, deal with every day**. Think of when you set an app to dark mode, when you load the latest purchases from a given user, or when you momentarily disable a button during data fetching: all you do is managing state. User flows are transitions between UI states, caused by events.
 
-There are many ways to represent state in modern web applications. In Vue.js, you can use local state (encapsulated within components) or global state (using a state management library like [Vuex][vuex]{:target="_blank", :rel="noopener"}). Wherever you put your state, it usually works the same way: **you represent it with properties that you can change, and you use that property to determine view logic**.
+There are many ways to represent state in modern web applications. In Vue.js, you can use local state (encapsulated within components) or global state (using a state management library like [Vuex][vuex]{:target="_blank", :rel="noopener"}). Wherever you put your state, it usually works the same way: **you represent it with properties that you can change, and you use these properties to determine view logic**.
 
 [![Password Modal with Finite State Machine by David Khourshid](assets/2020-02-17/password-modal-with-fsm-david-khourshid.png)][codepen:davidkpiano:password-xstate]{:target="_blank", :rel="noopener"}
 [Password Modal with Finite State Machine][codepen:davidkpiano:password-xstate]{:target="_blank", :rel="noopener"} by [David Khourshid][github:davidkpiano]{:target="_blank", :rel="noopener"}
@@ -103,10 +103,10 @@ const toggleMachine = createMachine({
   initial: "rendered",
   states: {
     rendered: {
-      on: { TOGGLE: "raw" }
+      on: { SWITCH: "raw" }
     },
     raw: {
-      on: { TOGGLE: "rendered" }
+      on: { SWITCH: "rendered" }
     }
   }
 });
