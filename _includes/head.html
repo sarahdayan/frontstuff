@@ -10,7 +10,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@frontstuff_io" />
   <meta name="twitter:creator" content="@frontstuff_io" />
-  <meta name="twitter:image" content="{{ "/assets/frontstuff.png" | absolute_url }}" />
+  <meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ "/assets/frontstuff.png" | absolute_url }}{% endif %}" />
 
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}" />
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} | {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}" />
