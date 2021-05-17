@@ -5,15 +5,11 @@ date: 2021-05-17 00:00:00 +0200
 comments: true
 ---
 
-Half a decade after the first official commit of [ACSS](https://acss.io/), one of the first viable functional CSS frameworks, utility-first CSS is alive and well. On [State of CSS 2020,](https://2020.stateofcss.com/technologies/methodologies/) the methodology has jumped to the top in terms of user satisfaction. [Tailwind CSS](https://tailwindcss.com/docs), the front-runner of the approach, has crossed 3.5 million downloads per month on [npm](https://www.npmjs.com/).
+Half a decade after the first commit of the pioneering [ACSS](https://acss.io/), [**utility-first CSS is more popular than ever**](https://2020.stateofcss.com/technologies/methodologies/). With success comes many adepts but also a fair share of criticism. This is a good thing: polarized opinions means topics matter enough for people to care. Healthy debate contributes to identifying weaknesses and fueling growth, while indifference would let it stagnate and die.
 
-Like anything successful, utility-first CSS has many adepts and receives a fair share of criticism. This is a good thing. Polarized opinions usually mean something matters, for better or worse. It also contributes to its overall growth by revealing weaknesses and fueling innovation.
+As an [early-defender of utility-first CSS](/in-defense-of-utility-first-css) ([video version](https://youtu.be/R50q4NES6Iw)), I love reading constructive critiques that challenge my views and get my problem-solving juices flowing. But despite numerous attempts at debunking common fallacies, utility-first enthusiasts keep on having to reply to a staggering amount of misconceptions. And by far, **the most tired, overused cliché is that utility classes are just inline styles.**
 
-However, even after countless articles and talks to debunk common fallacies (including mine [here](/in-defense-of-utility-first-css) and [here](https://youtu.be/R50q4NES6Iw)), there's still a staggering amount of misinformation on utility-first CSS. By far, **the hardest cliché to uproot is that utility classes are the same as inline styles.**
-
-In 2018, I wrote [In Defense of Utility-First CSS](/in-defense-of-utility-first-css), which touched on this specific misconception among others. At the time, it seemed like the easiest one to rectify, the one that would soon disappear because of how clear the difference is. But persisting falsehoods remind us that nothing is ever obvious and mostly require better explanations.
-
-Three years later, time to give it another spin.
+In my [2018 article](/in-defense-of-utility-first-css), I touched on this specific belief among many others. At the time, it seemed like the easiest one to rectify, the one that would soon disappear because of how easy it was to expose. But persisting falsehoods remind us that nothing is ever obvious, and we should come up with better explanations.
 
 ## Inline styles only apply to the elements they're declared on
 
@@ -38,7 +34,7 @@ As with any CSS declaration, inline styles are subject to inheritance, so they c
 </article>
 {% endhighlight %}
 
-The inheritable `color` property (inlined on the article element) affects any child which doesn't explicitly declare the `color` property.
+The inheritable `color` property affects any child which doesn't explicitly declare the property themselves.
 {:.caption}
 
 Aside from that, inline styles only have a local impact. This is because you can only declare *styles*, not *rules*. You're not in a style sheet or within an embedded `<style>` block, meaning you can't write selectors. This cuts you from writing styles for pseudo-classes and elements, more complex selectors using combinators, media queries, or animations.
@@ -109,7 +105,7 @@ Another use case is media queries. A decade ago, [Twitter Bootstrap](https://get
 </div>
 {% endhighlight %}
 
-Bootstrap grids use media queries to create layout variation across devices of different sizes.
+Bootstrap grids use media queries to create layout variations across devices of different sizes.
 {:.caption}
 
 There are plenty of available use cases with media queries, including print styles, user preference, feature availability, and more. With a utility-first approach, you can leverage these features to create functional classes that only apply under a given set of conditions.
@@ -148,7 +144,7 @@ The rise of pre- and post-processors is among the best innovations of the last d
 Usage ranking for pre- and post-processors in [State of CSS 2020](https://2020.stateofcss.com/).
 {:.caption}
 
-CSS pre-processors like [Sass](https://sass-lang.com/), [Less](https://lesscss.org/), and [Stylus](https://stylus-lang.com/) let users leverage imperative programming features such as variables, loops, functions, and more, to write clearer, DRY-er CSS by compiling a superset language into valid CSS. Post-processors—like [PostCSS](https://postcss.org/)—on the other hand, augments CSS after the fact by taking valid CSS and transforming it for different purposes—backward compatibility, scoping, auto prefixing, linting, you name it.
+CSS pre-processors like [Sass](https://sass-lang.com/), [Less](https://lesscss.org/), and [Stylus](https://stylus-lang.com/) let users leverage imperative programming features such as variables, loops, functions, and more, to write clearer, DRY-er code by compiling a superset language into valid CSS. Post-processors—like [PostCSS](https://postcss.org/)—on the other hand, augments CSS after the fact by taking valid CSS and transforming it for different purposes—backward compatibility, scoping, auto prefixing, linting, you name it.
 
 Utility classes are declared separately, so they're great candidates for processing. For example, [Uniform CSS](https://uniformcss.com/) is built entirely with Sass. If you're willing to write your own utility classes, you can use pre-processors to write less code, group features, and more.
 
@@ -183,22 +179,24 @@ $font-weights: (
 The programmatic capabilities of pre-processors help write utility classes more efficiently.
 {:.caption}
 
-[Tailwind CSS](https://tailwindcss.com/docs/installation#installing-tailwind-css-as-a-post-css-plugin), the leading utility-first CSS framework, was designed to work primarily as a PostCSS plugin. It also uses several PostCSS plugins, such as [PurgeCSS](https://purgecss.com/), to let go of any unused class at build-time or [`postcss-selector-parser`](https://github.com/postcss/postcss-selector-parser) in their [JIT compiler](https://tailwindcss.com/docs/just-in-time-mode).
+[Tailwind CSS](https://tailwindcss.com/docs/installation#installing-tailwind-css-as-a-post-css-plugin), the leading utility-first framework, was designed to work primarily as a PostCSS plugin. It uses several PostCSS plugins itself, such as [PurgeCSS](https://purgecss.com/) to drop unused classes at build-time, or [`postcss-selector-parser`](https://github.com/postcss/postcss-selector-parser) in their [JIT compiler](https://tailwindcss.com/docs/just-in-time-mode).
 
 While you *could* technically write tools to process inline styles within HTML, none of the existing mature tools provides any official and actively maintained solution for that. The CSS pre-/post-processing ecosystem largely relies on separate style sheets, where it brings the most value. At the time of this writing, **there's virtually no production-safe way to process inline styles.**
 
 ## Inline styles don't cache well
 
-Now, you could say that inline styles *do* cache because you can cache HTML, which would be correct. However, this is highly inefficient.
+You could say that inline styles *do* cache because you can cache HTML, which would be correct. However, this is a highly inefficient strategy, which doesn't compare to caching CSS.
 
-**Content and style have radically different growth rates.** Content is designed to grow at least linearly, often much faster. If there's anything to cache, it usually doesn't last long. For example, a news site like the New York Times updates articles in real-time and [publishes hundreds of articles every day](https://www.theatlantic.com/technology/archive/2016/05/how-many-stories-do-newspapers-publish-per-day/483845/). The homepage uses the `no-cache` [cacheability directive](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#cacheability). [It does use a CDN](https://www.datacenterknowledge.com/archives/2017/04/18/how-new-york-times-handled-unprecedented-election-night-traffic-spike) like many sites that require high speed and high availability for their content but sets [maximum age](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#expiration) of 30 seconds for anything in the cache to be considered fresh. It makes it virtually impossible for a regular user to retrieve the same document twice when visiting the same page.
+**Content and style have radically different growth rates.** Content is designed to grow linearly (at least), often much faster. If there's anything to cache, it usually doesn't last long.
+
+For example, a news site like the New York Times [publishes hundreds of articles every day](https://www.theatlantic.com/technology/archive/2016/05/how-many-stories-do-newspapers-publish-per-day/483845/) and updates posts in real-time. The homepage uses the `no-cache` [cacheability directive](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#cacheability). [It does use a CDN](https://www.datacenterknowledge.com/archives/2017/04/18/how-new-york-times-handled-unprecedented-election-night-traffic-spike), like many sites that need high speed and high availability for their content, but sets [maximum age](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#expiration) of 30 seconds for anything in the cache to be considered fresh. **It makes it virtually impossible for a regular user to retrieve the same file twice when visiting the same page.**
 
 ![The page served at nytimes.com has a TTL of 30 seconds.](/assets/2021-05-17/nyt-html-cache-headers.png)
 
 The page served at [nytimes.com](http://nytimes.com) has a [TTL](https://developer.fastly.com/learning/concepts/cache-freshness/) of 30 seconds.
 {:.caption}
 
-When you look at their global style sheet, however, this is a different story. The [cacheability directive](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#cacheability) is set to `public` (which apparently [isn't necessary when using an expiration directive](https://www.fastly.com/blog/cache-control-wild), but here it still denotes intent), but more interestingly, is set to be considered fresh by the CDN for... a year!
+Their global style sheet, however, this is a different story. The [cacheability directive](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#cacheability) is set to `public` (which apparently [isn't necessary when using an expiration directive](https://www.fastly.com/blog/cache-control-wild), but here it still denotes intent), but more interestingly, is set to be considered fresh by the CDN for... a year!
 
 ![The global styles on nytimes.com can stay in cache for up to 365 days.](/assets/2021-05-17/nyt-css-cache-headers.png)
 
@@ -207,20 +205,20 @@ The global styles on [nytimes.com](http://nytimes.com) can stay in cache for up 
 
 <div class="alert alert--info" markdown="1">
 
-On some pages, the New York Times serves other style sheets with a much lower `max-age` directive (usually 60 seconds). Most of these are dynamically generated by [Svelte](https://svelte.dev/), a JavaScript UI library that lets you write scoped CSS. These assets contain a content-based hash in their file name that automatically busts the cache when the content change, so it's still unclear to me why they don't have longer TTLs. If anybody has the answer, [let me know on Twitter](https://twitter.com/frontstuff_io)!
+On some pages, the New York Times serves other style sheets with a much lower `max-age` directive (usually 60 seconds). Most of these are dynamically generated by [Svelte](https://svelte.dev/), a JavaScript UI library that lets you write scoped CSS. These assets contain a content-based hash in their file name that automatically busts the cache when the content changes, so it's still unclear to me why they don't have longer TTLs. If anybody has the answer, [let me know on Twitter](https://twitter.com/frontstuff_io)!
 
 </div>
 
-This is a good demonstration of how style is expected to age compared to content. There are differences in caching strategy depending on the CSS methodology you use, but conceptually speaking, **on a content site, what it looks like is usually expected to last much longer than what it says.**
+This well demonstrates how style is expected to age compared to content. There are differences in caching strategy depending on the CSS methodology you use, but conceptually speaking, on a content site, **what it looks like usually lasts much longer than what it says.**
 
-Now let's take a content site that *does* use utility-first CSS: the [Tailwind CSS documentation](https://tailwindcss.com/docs).
+Going one step further, let's take a content site that *does* use utility-first CSS: the [Tailwind CSS documentation](https://tailwindcss.com/docs).
 
 ![The page served at tailwindcss.com/docs has a TTL of 0 seconds.](/assets/2021-05-17/tailwindcss-html-cache-headers.png)
 
 The page served at [tailwindcss.com/docs](http://tailwindcss.com/docs) has a [TTL](https://developer.fastly.com/learning/concepts/cache-freshness/) of 0 seconds.
 {:.caption}
 
-The home page has a `max-age` of 0 with a `must-revalidate` revalidation directive, which is [the default `Cache-Control` header value set by Vercel](https://vercel.com/docs/edge-network/caching#static-files), the edge network that Tailwind uses for their site, to avoid browser caching and always ensure fresh content. In simpler terms, **this content page needs to be as fresh as possible.**
+The home page has a `max-age` of 0 with a `must-revalidate` revalidation directive. This is [the default `Cache-Control` value set by Vercel](https://vercel.com/docs/edge-network/caching#static-files), the edge network that Tailwind uses, to avoid browser caching and always ensure fresh content. In simpler terms, **this content page needs to be as fresh as possible.**
 
 When you look at the styles for that same page, the strategy is radically different.
 
@@ -229,13 +227,13 @@ When you look at the styles for that same page, the strategy is radically differ
 The styles on [tailwindcss.com/docs](http://tailwindcss.com/docs) can stay in cache for up to 365 days.
 {:.caption}
 
-As with the New York Times, styles on the Tailwind docs can stay in cache for up to a year. It also declares an `immutable` revalidation directive, indicating that the response won't change over time. Coupling a `max-age` of one year with an `immutable` revalidation directive is the equivalent of saying "please cache this forever", as the [HTTP 1.1 protocol won't let you declare values longer than that](https://www.ietf.org/rfc/rfc2616.txt). In other words, **these style sheets can be served from the cache for as long as possible because they're not expected to change.**
+As with the New York Times, styles on the Tailwind docs can stay in cache for up to a year. It also declares an `immutable` revalidation directive, indicating that the response won't change over time. Coupling a `max-age` of one year with an `immutable` revalidation directive is the equivalent of saying "please cache this forever", as the [HTTP 1.1 spec won't let you declare values longer than that](https://www.ietf.org/rfc/rfc2616.txt). In other words, **these style sheets can be served from the cache for as long as possible because they're not expected to change.**
 
-Why go down the rabbit hole of static file caching when we're talking about inline styles, you might wonder. The point here is to demonstrate with real use cases that **HTML and CSS caching aren't equivalent, because they serve different purposes.** You can cache an HTML page, so you can technically cache inline styles, but this is a failing strategy considering that this HTML page will need to revalidate for content reasons, way before you even touch the styles.
+*"Why go down the rabbit hole of static file caching when we're talking about inline styles?"*, you might wonder. The point here is to demonstrate with real use cases and metrics that **HTML and CSS caching aren't equivalent, because they serve different purposes.** You can cache an HTML page, so you can technically cache inline styles. Yet, this is a failing strategy considering this HTML page will need to revalidate for content reasons, way before you even touch the styles.
 
-**Caching styles in CSS files is much more efficient** because, by nature, their content stays longer in the same state. It comes at the "cost" of an additional HTTP request, but with [persistent connections](https://en.wikipedia.org/wiki/HTTP_persistent_connection) (or even multiplexing with HTTP/2), the impact on latency and CPU are often unnoticeable.
+**Caching styles in CSS files is much more efficient** because, by nature, their content stays in the same state longer. It comes at the "cost" of an additional HTTP request, but with [persistent connections](https://en.wikipedia.org/wiki/HTTP_persistent_connection) and [multiplexing](https://en.wikipedia.org/wiki/HTTP/2), the impact on latency and CPU are often unnoticeable for the end user.
 
-Utility classes grow logarithmically, as you mostly reuse existing "design tokens" even when you build new features and create new pages. **Utility classes work wonderfully with long TTLs, while the location of inline styles makes it pointless ever to cache them.**
+Utility classes grow logarithmically, as you reuse existing "design tokens" even when you build new features or create new pages. Utility classes work wonderfully with aggressive caching strategies. In contrast, **the location of inline styles makes it pointless ever to cache them.**
 
 ## Inline styles are unlimited
 
@@ -279,9 +277,9 @@ Inline styles repeat the same solutions, with greater chance of inconsistencies.
 
 ## Inline styles are one thing at a time
 
-Because they're usually small, have functional names, and live in the HTML, utility classes *feel* similar to inline styles to many of those who encounter them for the first time. But contrary to popular belief, **utility classes aren't always single-property classes.**
+Because they're usually small, have functional names, and live in the HTML, utility classes *feel* similar to inline styles to many of those who encounter them for the first time. But contrary to popular belief, **utilities aren't always single-property classes.**
 
-Back when the only way to build grids was using floated blocks, the [clearfix hack](https://css-tricks.com/snippets/css/clear-fix/) became one of the first widely used utility classes on the Internet. The `.clearfix` class has no semantics. It's a purely presentational utility, meant to be reused anywhere you need. Yet, despite being atomic, it requires several declarations to be useful.
+Back when the only way to build grids was using floated blocks, the [clearfix trick](https://css-tricks.com/snippets/css/clear-fix/) became one of the first widely used utility classes on the Internet. The `.clearfix` class has no semantics, it's a purely presentational utility. Yet, despite being atomic, it requires several declarations to be useful.
 
 {% highlight css %}
 .clearfix:after {
@@ -294,11 +292,13 @@ Back when the only way to build grids was using floated blocks, the [clearfix ha
 One of the modern versions of the clearfix trick.
 {:.caption}
 
-Because they're like any other classes, utility classes can declare as many styles as necessary to do their job. The only reason why they're usually small is that they're single-purposed. When slicing a CSS codebase into a hyper modular design system, it's natural for the resulting design tokens to be one-liners. But because it's the norm doesn't mean it's the rule, and many utilities go against that trend.
+**Utility classes can declare as many styles as necessary to do their job.** They're usually small because they're single-purposed, but that's an effect, not a design principle. When slicing a CSS codebase into a hyper modular design system, it's natural for the resulting design tokens to be one-liners. But because it's the norm doesn't mean it's the rule, and many utilities trump that trend.
 
-From the Tailwind CSS codebase:
+Examples from the Tailwind CSS and Bootstrap codebases:
 
 {% highlight css %}
+/* In Tailwind */
+
 .truncate {
   overflow: hidden;
   white-space: nowrap;
@@ -323,14 +323,9 @@ From the Tailwind CSS codebase:
   bottom: 0px;
   left: 0px;
 }
-{% endhighlight %}
 
-A few multi-declaration utility classes in Tailwind CSS.
-{:.caption}
+/* In Bootstrap */
 
-Or Bootstrap:
-
-{% highlight css %}
 .text-hide {
   font: 0/0 a;
   color: transparent;
@@ -340,10 +335,10 @@ Or Bootstrap:
 }
 {% endhighlight %}
 
-A multi-declaration utility classes in Bootstrap.
+A few multi-declaration utility classes in Tailwind CSS and Bootstrap.
 {:.caption}
 
-Inline styles declare one property at a time (unless they also declare CSS variables, but that's a marginal use case). These styles don't *mean* anything. They don't describe atomic visual concepts, they declare individual CSS properties and that's it. While utility classes aren't semantic, they still convey meaning and intent.
+Inline styles declare one property at a time (they can also declare [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties), but that's a marginal use case). These styles don't *mean* anything. They don't describe atomic visual concepts, they declare individual CSS properties and that's it. In opposition, **while utility classes aren't semantic, they're still abstractions, conveying meaning and intent.**
 
 ## Apples and oranges
 
@@ -353,9 +348,7 @@ In [yet another insightful Twitter thread](https://twitter.com/mathiasverraes/st
 
 > Your brain rewards you for classifying new information into existing buckets. Looking for similarities is lower energy than understanding new differences. [...] Proclaiming that the new idea is the same as the old idea, gives you permission not to investigate it deeply, stick to the existing reality where you are an expert in the old idea, and the new ones are merely repackaging of your insight.
 
-Unless making discoveries is your job, there are few incentives for you to spend energy on distinguishing new concepts from known patterns.
-
-Saying that utility classes and inline styles are the same is more comfortable than digging deeper to understand the differences. This even more true if you don't instantly see any other benefit to utility-first CSS, which could otherwise fuel your curiosity.
+Unless making discoveries is your job, there are few incentives for you to spend energy on distinguishing new concepts from known patterns. Equating utility classes and inline styles is more comfortable than digging deeper to understand the differences. This bears even more true if you're not instantly seeing any other benefit with utility-first CSS, which could otherwise pique your curiosity.
 
 Mathias follows up:
 
@@ -363,6 +356,6 @@ Mathias follows up:
 
 Limiting what information to spend brainpower on is not laziness but self-preservation. Being a developer is exhausting, especially in web. It's okay to deliberately pass on something, to not be interested, or to decide that now isn't the right time.
 
-The key, however, is to be honest about it. Admitting you didn't (yet) go deeper into a topic to shape an informed viewpoint is a healthier reaction than making snap judgments because you think you need to have an opinion. **It also contributes to normalizing not knowing, creating a more welcoming atmosphere for beginners.**
+The key, however, is to be honest about it. Admitting you didn't (yet) go deeper into a topic to shape an informed viewpoint is a healthier reaction than making snap judgments so you can claim you have an opinion. **It also participates in normalizing not knowing, which creates a welcoming atmosphere for beginners, and fights the imposter syndrome we all seem to struggle with.**
 
 Comparatively, this feels like a better contribution.
