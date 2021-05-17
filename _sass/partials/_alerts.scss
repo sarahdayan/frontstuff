@@ -6,6 +6,10 @@
     @include variable("background", "warning-color");
     @include variable("color", "warning-text-color");
   }
+  &--info {
+    @include variable("background", "info-color");
+    @include variable("color", "info-text-color");
+  }
   > *:last-child,
   > *:last-child > *:last-child,
   > *:last-child > *:last-child > *:last-child {
