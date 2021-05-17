@@ -7,7 +7,7 @@
     endif %}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}" />
   <meta name="twitter:site" content="@frontstuff_io" />
   <meta name="twitter:creator" content="@frontstuff_io" />
   <meta name="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ "/assets/frontstuff.png" | absolute_url }}{% endif %}" />
