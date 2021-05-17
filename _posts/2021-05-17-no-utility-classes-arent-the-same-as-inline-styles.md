@@ -2,6 +2,7 @@
 layout: post
 title: "No, Utility Classes Aren't the Same As Inline Styles"
 date: 2021-05-17 00:00:00 +0200
+image: assets/2021-05-17/og.png
 comments: true
 ---
 
