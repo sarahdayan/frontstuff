@@ -126,11 +126,11 @@ module.exports = {
     {
       extractor: class {
         static extract(content) {
-          return content.match(/[A-z0-9-:\/]+/g) || []
-        },
-        extensions: ['js']
-      }
-    }
+          return content.match(/[A-z0-9-:\/]+/g) || [];
+        }
+      },
+      extensions: ['js']
+    },
   ]
 }
 {% endhighlight %}
